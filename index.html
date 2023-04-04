@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./styles/default.css">
+    <link rel="stylesheet" href="./styles/index.css">
+
+    <script src="index.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <title>Início</title>
+</head>
+
+<body>
+    <header>
+        <div class="supporters">
+            <a href="https://www.gov.br/inep/pt-br" target="blank"> <img id="inep-logo" src="../imgs/inep_logo.svg" alt="INEP"> </a>
+            <hr>
+            <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade" target="blank"> <img id="enade-logo" src="../imgs/enade_logo.svg" alt="ENADE"> </a>
+        </div>
+
+        <ul class="header-menu">
+            <li> <a href="index.html">Início</a> </li>
+            <li> <a href="views/creditos.html">Créditos</a> </li>
+            <li> <a href="views/sobre.html">Sobre</a> </li>
+        </ul>
+    </header>
+
+    <main>
+        <hr>
+
+        <section id="poster">
+            <div id="poster-text">
+                <p>Teste seu conhecimento, resolva o simulado</p>
+                <h1>ENADE - Logística 2012</h1>
+
+                <h2>Sobre o ENADE:</h2>
+                <p>"O Exame Nacional de Desempenho dos Estudantes (Enade) avalia o rendimento dos concluintes dos cursos de graduação em relação aos conteúdos programáticos previstos nas diretrizes curriculares dos cursos, o desenvolvimento de competências e habilidades necessárias ao aprofundamento da formação geral e profissional, e o nível de atualização dos estudantes com relação à realidade brasileira e mundial."</p>
+                <span class="source">https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade</span>
+
+                <button> <a href="views/sobre.html">SAIBA MAIS</a> </button>
+            </div>
+
+            <div id="poster-devices">
+                <img src="imgs/home-wave.png">
+                <div id="poster-devices-content">
+                    <h2>Agora na VERSÃO DIGITAL!</h2>
+                    <img src="../imgs/devices_mockup.svg">
+                </div>
+            </div>
+        </section>
+
+        <section id="instructions">
+            <div id="instructions-text">
+                <h2>INSTRUÇÕES:</h2>
+                <ol type="1">
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium nec nisi at elementum. In a tristique augue. Duis malesuada lacinia risus in vulputate.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium nec nisi at elementum. In a tristique augue. Duis malesuada lacinia risus in vulputate.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium nec nisi at elementum. In a tristique augue. Duis malesuada lacinia risus in vulputate.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium nec nisi at elementum. In a tristique augue. Duis malesuada lacinia risus in vulputate.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium nec nisi at elementum. In a tristique augue. Duis malesuada lacinia risus in vulputate.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium nec nisi at elementum. In a tristique augue. Duis malesuada lacinia risus in vulputate.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium nec nisi at elementum. In a tristique augue. Duis malesuada lacinia risus in vulputate.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium nec nisi at elementum. In a tristique augue. Duis malesuada lacinia risus in vulputate.</li>
+                </ol>
+            </div>
+
+            <div id="instructions-button">
+                <button id="button-start-test" onclick="openModal('modal-start-test')"> INICIAR O SIMULADO </button>
+                
+                <div id="instructions-files">
+                    <p>*Arquivos em PDF</p>
+                    <div id="pdf-files">
+                        <button> <a href="pdfs/Prova.pdf" target="blank">Prova</a> </button>
+                        <button> <a href="pdfs/Gabarito.pdf" target="blank">Gabarito</a> </button>
+                        <button> <a href="pdfs/Padrão de resposta.pdf" target="blank">Padrão de resposta</a> </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="modal-background" id="modal-start-test">
+            <div class="modal">
+                <p class="modal-title">Aviso!</p>
+                <hr>
+                <p class="modal-text">Você está prestes a iniciar o Simulado, antes de começar tenha certeza de que leu as instruções corretamente.</p>
+                <div class="modal-button">
+                    <button class="modal-close-button" onclick="closeModal('modal-start-test')">CANCELAR</button>
+                    <button class="modal-accept-button" onclick="startTest(); window.location.href = `./views/questions/Eq6_Q1.html`">COMEÇAR</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div>
+            <a href="http://www.fateccarapicuiba.edu.br/" target="blank"> <img src="../imgs/fatec_logo.png" alt="FATEC Carapicuíba"> </a>
+            <a href="http://www.fateccarapicuiba.edu.br/analise-e-desenvolvimento-de-sistemas/" target="blank"> <img src="../imgs/ads_logo.png" alt="Curso de Análise e Desenvolvimento de Sistemas"> </a>
+            <a href="https://www.cps.sp.gov.br/" target="blank"> <img src="../imgs/cps_logo.png" alt="Centro Paula Souza"> </a>
+        </div>
+        <p>&copy Todos os direitos reservados aos seus devidos autores.</p>
+    </footer>
+</body>
+
+</html>

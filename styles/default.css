@@ -1,0 +1,286 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background-color: #F2F2F2;
+}
+
+body hr {
+    color: #C9C9C9;
+}
+
+input, button, li{
+    outline: none;
+}
+
+
+/* HEADER */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 24px 64px 12px 64px;
+}
+
+.supporters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+.supporters a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.supporters hr {
+    color: #C9C9C9;
+    height: 28px;
+}
+#inep-logo { width: 100px; }
+#enade-logo { width: 68px }
+
+.header-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+.header-menu li {
+    list-style: none;
+}
+.header-menu li a {
+    text-decoration: none;
+    color: #606060;
+    font-size: 16px;
+    transition: .5s;
+    cursor: pointer;
+}
+.header-menu li a:hover{
+    color: #0072D4;
+    font-weight: 500;
+}
+
+
+
+/* MAIN */
+main {
+    width: 100%;
+    height: 100%;
+    padding: 0 64px 24px 64px;
+}
+main hr {
+    width: 100%;
+    height: 1px;
+    color: #C9C9C9;
+    margin-bottom: 12px;
+}
+
+
+
+/* FOOTER */
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #013766;
+    color: white;
+    width: 100%;
+    padding: 12px 0;
+}
+
+footer div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    gap: 28px;
+}
+footer div img{
+    width: 85px;
+}
+footer p {
+    font-weight: 200;
+    font-size: 14px;
+}
+
+
+
+/* CLASSES */
+.source{
+    width: 100%;
+    font-size: 12px;
+    font-weight: 100;
+    font-style: italic;
+    text-align: end;
+    color: white;
+}
+.question-source{
+    width: 100%;
+    font-size: 12px;
+    font-weight: 200;
+    font-style: italic;
+    text-align: end;
+    color: black;
+}
+
+
+/* CLASSES PARA O MODAL */
+.modal-background{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal{
+    background-color: white;
+    padding: 24px;
+    border: none;
+    border-radius: 4px;
+    margin: 0 360px;
+    width: 100%;
+}
+.modal-title{
+    width: 100%;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    color: #606060;
+}
+.modal-text{
+    font-size: 18px;
+    font-weight: 400;
+    width: 100%;
+    text-align: center;
+}
+.modal-button{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 12px;
+    margin-top: 12px;
+}
+.modal-button button{
+    padding: 12px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .5s;
+}
+.modal-button button a, button{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+.modal-close-button{
+    background-color: #b6b6b6;
+}
+.modal-close-button:hover{
+    background-color: #a0a0a0;
+}
+.modal-cancel-button{
+    background-color: rgba(208, 0, 3, 0.75);
+}
+.modal-cancel-button:hover{
+    background-color: rgba(208, 0, 3);
+}
+.modal-accept-button{
+    background-color: rgba(0, 73, 136, 0.75);
+}
+.modal-accept-button:hover{
+    background-color: rgba(0, 73, 136);
+}
+.modal-correct-button{
+    background-color: rgba(0, 153, 0, 0.75);
+}
+.modal-correct-button:hover{
+    background-color: rgba(0, 153, 0);
+}
+
+
+/* CLASSES PARA O LINK NAS QUESTÕES  */
+.actual-question{
+    border: 3px solid #013766;
+    background-color: transparent;
+}
+.actual-question > a {
+    color: #013766;
+}
+.actual-question:hover > a{
+    color: #013766;
+}
+
+.no-answer{
+    border: 1px solid #606060;
+    background: none;
+}
+.no-answer:hover{
+    background-color: rgba(96, 96, 96, 0.15);
+}
+.no-answer > a {
+    color: #013766;
+}
+.no-answer:hover > a{
+    color: #013766;
+}
+
+.correct-answer{
+    background-color: rgba(0, 153, 0);
+}
+.wrong-answer{
+    background-color: rgba(208, 0, 3);
+}
+.correct-answer:hover{
+    background-color: rgba(0, 153, 0);
+}
+.wrong-answer:hover{
+    background-color: rgba(208, 0, 3);
+}
+.correct-answer > a, .wrong-answer > a {
+    color: white;
+}
+
+
+/* CLASSES PARA AS ALTERNATIVAS NAS QUESTÕES */
+.correct-alternative{
+    background-color: rgba(0, 153, 0, 0.5);
+}
+.correct-alternative:hover{
+    background-color: rgba(0, 153, 0, 0.5);
+}
+.wrong-alternative{
+    background-color: rgba(208, 0, 3, 0.5);
+}
+.wrong-alternative:hover{
+    background-color: rgba(208, 0, 3, 0.5);
+}
+.no-alternative{
+    background-color: transparent;
+}
+.no-alternative:hover{
+    background-color: #e7e7e7;
+}
+.disable-alternative{
+    cursor: default;
+    color: #a0a0a0;
+}

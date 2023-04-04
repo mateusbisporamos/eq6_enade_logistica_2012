@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../styles/default.css">
+    <link rel="stylesheet" href="../../styles/question.css">
+
+    <script src="../../index.js"></script>
+    <script src="./question.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <title>Questão 7 - ENADE Logística 2012</title>
+</head>
+
+<body>
+    <header>
+        <div class="supporters">
+            <a href="https://www.gov.br/inep/pt-br" target="blank"> <img id="inep-logo" src="../../../imgs/inep_logo.svg" alt="INEP"> </a>
+            <hr>
+            <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade" target="blank"> <img id="enade-logo" src="../../../imgs/enade_logo.svg" alt="ENADE"> </a>
+        </div>
+
+        <ul class="header-menu">
+            <li> <a onclick="openModal('modal-close-test')">Início</a> </li>
+        </ul>
+    </header>
+
+    <main>
+        <hr>
+        
+        <!-- Link para outras questões - Preenchido automaticamente pelo JS -->
+        <ul class="questions-link" id="questions-link"> </ul>
+
+        <hr>
+
+        <section class="question">
+            <!-- Questão -->
+            <div class="question-text">
+                <h3 id="question-number">Questão 7</h3>
+
+                <p style="width: 100%; text-align: center; font-weight: bold;">Legisladores do mundo se comprometem a alcançar os objetivos da Rio+20</p>
+                
+                <p>Reunidos na cidade do Rio de Janeiro, 300 parlamentares de 85 países se comprometeram a ajudar seus governantes a alcançar os objetivos estabelecidos nas conferências Rio+20 e Rio 92, assim como a utilizar a legislação para promover um crescimento mais verde e socialmente inclusivo para todos.</p>
+                <p>Após três dias de encontros na Cúpula Mundial de Legisladores, promovida pela GLOBE International — uma rede internacional de parlamentares que discute ações legislativas em relação ao meio ambiente —, os participantes assinaram um protocolo que tem como objetivo sanar as falhas no processo da Rio 92.</p>
+                <p>Em discurso durante a sessão de encerramento do evento, o vice-presidente do Banco Mundial para a América Latina e o Caribe afirmou: “Esta Cúpula de Legisladores mostrou claramente que, apesar dos acordos globais serem úteis, não precisamos esperar. Podemos agir e avançar agora, porque as escolhas feitas hoje nas áreas de infraestrutura, energia e tecnologia determinarão o futuro”.</p>
+                <span class="question-source">Disponível em: <www.worldbank.org/pt/news/2012/06/20>. Acesso em: 22 jul. 2012 (adaptado).</span>
+                
+                <p>O compromisso assumido pelos legisladores, explicitado no texto acima, é condizente com o fato de que</p>
+            </div>
+
+            <!-- Alternativas -->
+            <div class="question-alternatives">
+                <ol type="A" id="ol-question-alternatives">
+                    <li> <div class="alternative"> <input type="radio" name="Q1" id="Q1_Aa" onchange="handleRadioChange(this)"> <label for="Q1_Aa">os acordos internacionais relativos ao meio ambiente são autônomos, não exigindo de seus signatários a adoção de medidas internas de implementação para que sejam revestidos de exigibilidade pela comunidade internacional.</label> </div> </li>
+                    <li> <div class="alternative"> <input type="radio" name="Q1" id="Q1_Ab" onchange="handleRadioChange(this)"> <label for="Q1_Ab">a mera assinatura de chefes de Estado em acordos internacionais não garante a implementação interna dos termos de tais acordos, sendo imprescindível, para isso, a efetiva participação do Poder Legislativo de cada país.</label> </div> </li>
+                    <li> <div class="alternative"> <input type="radio" name="Q1" id="Q1_Ac" onchange="handleRadioChange(this)"> <label for="Q1_Ac">as metas estabelecidas na Conferência Rio 92 foram cumpridas devido à propositura de novas leis internas, incremento de verbas orçamentárias destinadas ao meio ambiente e monitoramento da implementação da agenda do Rio pelos respectivos governos signatários.</label> </div> </li>
+                    <li> <div class="alternative"> <input type="radio" name="Q1" id="Q1_Ad" onchange="handleRadioChange(this)"> <label for="Q1_Ad">a atuação dos parlamentos dos países signatários de acordos internacionais restringe-se aos mandatos de seus respectivos governos, não havendo relação de causalidade entre o compromisso de participação legislativa e o alcance dos objetivos definidos em tais convenções.</label> </div> </li>
+                    <li> <div class="alternative"> <input type="radio" name="Q1" id="Q1_Ae" onchange="handleRadioChange(this)"> <label for="Q1_Ae">a Lei de Mudança Climática aprovada recentemente no México não impacta o alcance de resultados dos compromissos assumidos por aquele país de reduzir as emissões de gases do efeito estufa, de evitar o desmatamento e de se adaptar aos impactos das mudanças climáticas</label> </div> </li>
+                </ol>
+            </div>
+
+            <!-- Botões -->
+            <div class="question-buttons">
+                <button id="answer-question-button" disabled onclick="answerQuestion()">RESPONDER</button>
+                <button id="question-stats-button" disabled>ESTATÍSTICAS</button>
+                <button id="finish-test-button" onclick="openModal('modal-finish')">FINALIZAR SIMULADO</button>
+            </div>
+        </section>
+
+        <!-- Modal Sair -->
+        <div class="modal-background" id="modal-close-test">
+            <div class="modal">
+                <p class="modal-title">ATENÇÃO!</p>
+                <hr>
+                <p class="modal-text">Você está saindo da área do Simulado. Ao deixar essa página suas respostas serão desconsideradas.</p>
+                <div class="modal-button">
+                    <button class="modal-close-button" onclick="deleteAnswers(); window.location.href = `../../index.html`">SAIR</button>
+                    <button class="modal-cancel-button" onclick="closeModal('modal-close-test')">CANCELAR</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Resposta -->
+        <div class="modal-background" id="modal-answer">
+            <div class="modal"> </div>
+        </div>
+
+        <!-- Modal Finalizar -->
+        <div class="modal-background" id="modal-finish">
+            <div class="modal">
+                <p class="modal-title">ATENÇÃO!</p>
+                <hr>
+                <p class="modal-text">Você tem certeza de que deseja enviar suas resposta e ver seu resultado? Ao confimar não será possível preencher questões deixadas em branco.</p>
+                <div class="modal-button">
+                    <button class="modal-accept-button" onclick="window.location.href = `../resultado.html`">FINALIZAR</button>
+                    <button class="modal-cancel-button" onclick="closeModal('modal-finish')">CANCELAR</button>
+                </div>
+            </div>
+        </div>
+
+        
+    </main>
+    
+    <footer>
+        <div>
+            <a href="http://www.fateccarapicuiba.edu.br/" target="blank"> <img src="../../../imgs/fatec_logo.png" alt="FATEC Carapicuíba"> </a>
+            <a href="http://www.fateccarapicuiba.edu.br/analise-e-desenvolvimento-de-sistemas/" target="blank"> <img src="../../../imgs/ads_logo.png" alt="Curso de Análise e Desenvolvimento de Sistemas"> </a>
+            <a href="https://www.cps.sp.gov.br/" target="blank"> <img src="../../../imgs/cps_logo.png" alt="Centro Paula Souza"> </a>
+        </div>
+        <p>&copy Todos os direitos reservados aos seus devidos autores.</p>
+    </footer>
+</body>
+
+</html>

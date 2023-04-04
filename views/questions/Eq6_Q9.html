@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../styles/default.css">
+    <link rel="stylesheet" href="../../styles/question.css">
+
+    <script src="../../index.js"></script>
+    <script src="./question.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <title>Questão 9 - ENADE Logística 2012</title>
+</head>
+
+<body>
+    <header>
+        <div class="supporters">
+            <a href="https://www.gov.br/inep/pt-br" target="blank"> <img id="inep-logo" src="../../../imgs/inep_logo.svg" alt="INEP"> </a>
+            <hr>
+            <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade" target="blank"> <img id="enade-logo" src="../../../imgs/enade_logo.svg" alt="ENADE"> </a>
+        </div>
+
+        <ul class="header-menu">
+            <li> <a onclick="openModal('modal-close-test')">Início</a> </li>
+        </ul>
+    </header>
+
+    <main>
+        <hr>
+
+        <!-- Link para outras questões - Preenchido automaticamente pelo JS -->
+        <ul class="questions-link" id="questions-link"> </ul>
+
+        <hr>
+
+        <section class="question">
+            <!-- Questão -->
+            <div class="question-text">
+                <h3 id="question-number">Questão 9</h3>
+                <p>A gestão dos processos de distribuição e transportes pode ser aferida por intermédio do uso de indicadores de desempenho calculados para essa finalidade. Considerando esse contexto, avalie as afirmações abaixo acerca de conceitos de indicadores usados para mensurar a qualidade do processo de transporte.</p>
+                <ol type="I">
+                    <li>Pedido perfeito – mensura o percentual de pedidos entregues no prazo negociado com o cliente, completo, sem avarias e sem problemas na documentação fiscal.</li>
+                    <li>Percentual de entregas (ou coletas) realizadas no prazo – mensura o percentual de entregas (ou coletas) realizadas dentro do prazo combinado com o cliente.</li>
+                    <li>Custo com não-conformidades em transportes – mensura a participação de custos decorrentes de não conformidades no processo de planejamento, gestão e operação de transportes, tais como: devoluções, re-entregas, multas por atraso em entregas, indenizações de avarias, gastos com frete aéreo não previsto.</li>
+                    <li>Índice de atendimento do pedido – mensura o percentual de pedidos atendidos em sua totalidade, na quantidade e na diversidade de itens, na primeira remessa ao cliente.</li>
+                </ol>
+
+                <p>São corretos os conceitos apresentados nas proposições</p> 
+            </div>
+
+            <!-- Alternativas -->
+            <div class="question-alternatives">
+                <ol type="A" id="ol-question-alternatives">
+                    <li> <div class="alternative"> <input type="radio" name="Q1" id="Q1_Aa" onchange="handleRadioChange(this)"> <label for="Q1_Aa">I e III, apenas.</label> </div> </li>
+                    <li> <div class="alternative"> <input type="radio" name="Q1" id="Q1_Ab" onchange="handleRadioChange(this)"> <label for="Q1_Ab">I e IV, apenas.</label> </div> </li>
+                    <li> <div class="alternative"> <input type="radio" name="Q1" id="Q1_Ac" onchange="handleRadioChange(this)"> <label for="Q1_Ac">I e IV, apenas.</label> </div> </li>
+                    <li> <div class="alternative"> <input type="radio" name="Q1" id="Q1_Ad" onchange="handleRadioChange(this)"> <label for="Q1_Ad">II e IV, apenas.</label> </div> </li>
+                    <li> <div class="alternative"> <input type="radio" name="Q1" id="Q1_Ae" onchange="handleRadioChange(this)"> <label for="Q1_Ae">I, II, III e IV.</label> </div> </li>
+                </ol>
+            </div>
+
+            <!-- Botões -->
+            <div class="question-buttons">
+                <button id="answer-question-button" disabled onclick="answerQuestion()">RESPONDER</button>
+                <button id="question-stats-button" disabled>ESTATÍSTICAS</button>
+                <button id="finish-test-button" onclick="openModal('modal-finish')">FINALIZAR SIMULADO</button>
+            </div>
+        </section>
+
+        <!-- Modal Sair -->
+        <div class="modal-background" id="modal-close-test">
+            <div class="modal">
+                <p class="modal-title">ATENÇÃO!</p>
+                <hr>
+                <p class="modal-text">Você está saindo da área do Simulado. Ao deixar essa página suas respostas serão desconsideradas.</p>
+                <div class="modal-button">
+                    <button class="modal-close-button" onclick="deleteAnswers(); window.location.href = `../../index.html`">SAIR</button>
+                    <button class="modal-cancel-button" onclick="closeModal('modal-close-test')">CANCELAR</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Resposta -->
+        <div class="modal-background" id="modal-answer">
+            <div class="modal"> </div>
+        </div>
+
+        <!-- Modal Finalizar -->
+        <div class="modal-background" id="modal-finish">
+            <div class="modal">
+                <p class="modal-title">ATENÇÃO!</p>
+                <hr>
+                <p class="modal-text">Você tem certeza de que deseja enviar suas resposta e ver seu resultado? Ao confimar não será possível preencher questões deixadas em branco.</p>
+                <div class="modal-button">
+                    <button class="modal-accept-button" onclick="window.location.href = `../resultado.html`">FINALIZAR</button>
+                    <button class="modal-cancel-button" onclick="closeModal('modal-finish')">CANCELAR</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    
+    <footer>
+        <div>
+            <a href="http://www.fateccarapicuiba.edu.br/" target="blank"> <img src="../../../imgs/fatec_logo.png" alt="FATEC Carapicuíba"> </a>
+            <a href="http://www.fateccarapicuiba.edu.br/analise-e-desenvolvimento-de-sistemas/" target="blank"> <img src="../../../imgs/ads_logo.png" alt="Curso de Análise e Desenvolvimento de Sistemas"> </a>
+            <a href="https://www.cps.sp.gov.br/" target="blank"> <img src="../../../imgs/cps_logo.png" alt="Centro Paula Souza"> </a>
+        </div>
+        <p>&copy Todos os direitos reservados aos seus devidos autores.</p>
+    </footer>
+</body>
+
+</html>
