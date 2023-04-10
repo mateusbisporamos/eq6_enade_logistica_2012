@@ -158,9 +158,6 @@ main{
 }                   
 #finish-test-button{
     margin-left: auto;
-    background-color: rgba(0, 113, 212, 0.50);
-}
-#finish-test-button:hover{
     background-color: rgba(0, 113, 212);
 }
 

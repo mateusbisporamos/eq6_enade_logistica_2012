@@ -87,4 +87,6 @@ const enadeTest = {
     }
 };
 
-const startTest = () => window.localStorage.setItem('enadeTest', JSON.stringify(enadeTest))
+const startTest = () => {
+    window.localStorage.setItem('enadeTest', JSON.stringify(enadeTest))
+}

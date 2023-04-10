@@ -121,8 +121,10 @@ const answerQuestion = () => {
     testAlternatives[questionNumber-1] = userQuestionAnswer
     userQuestionAnswer == testAnswers[questionNumber-1] ? testResult[questionNumber-1] = true : testResult[questionNumber-1] = false
 
+    console.log(jsonEnadeTest.startAt)
+
     localStorage.setItem('enadeTest', JSON.stringify({
-        "startAt": enadeTest.startAt,
+        "startAt": jsonEnadeTest.startAt,
         "test": {
             "alternatives": testAlternatives,
             "result": testResult,
@@ -144,6 +146,21 @@ const handleRadioChange = (radioButton) => {
     radioButtonAlternativeSplit = radioButton.id.split('_')
     radioButtonAlternative = radioButtonAlternativeSplit[1].split('A')
     userQuestionAnswer = radioButtonAlternative[1].toUpperCase()
+}
+
+
+const finishTest = () => {
+    const now = new Date();
+
+    localStorage.setItem('enadeTest', JSON.stringify({
+        "startAt": jsonEnadeTest.startAt,
+        "finishedAt": String(now.getHours()).padStart(2, '0') + ':' + String(now.getMinutes()).padStart(2, '0') + ':' + String(now.getSeconds()).padStart(2, '0'),
+        "test": {
+            "alternatives": testAlternatives,
+            "result": testResult,
+            "answers": testAnswers
+        }
+    }))
 }
 
 

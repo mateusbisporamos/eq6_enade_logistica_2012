@@ -23,12 +23,39 @@ input, button, li{
 /* HEADER */
 
 header {
+    background-color: #F2F2F2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 24px 64px 0 64px;
+    gap: 12px;
+}
+
+header hr{
+    width: 100%;
+    height: 1px;
+    color: #C9C9C9;
+    margin-bottom: 12px;
+}
+
+.header{
+    background-color: #F2F2F2;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     height: 100%;
-    padding: 24px 64px 12px 64px;
+}
+
+.header hr{
+    height: 32px;
+    width: 1px;
+    color: #C9C9C9;
+    margin-bottom: 12px;
 }
 
 .supporters {
@@ -53,6 +80,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100%;
     gap: 24px;
 }
 .header-menu li {
@@ -64,10 +92,10 @@ header {
     font-size: 16px;
     transition: .5s;
     cursor: pointer;
+    font-weight: 400;
 }
 .header-menu li a:hover{
     color: #0072D4;
-    font-weight: 500;
 }
 
 
@@ -76,13 +104,8 @@ header {
 main {
     width: 100%;
     height: 100%;
+    margin-top: 100px;
     padding: 0 64px 24px 64px;
-}
-main hr {
-    width: 100%;
-    height: 1px;
-    color: #C9C9C9;
-    margin-bottom: 12px;
 }
 
 
@@ -94,10 +117,9 @@ footer{
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%;
+    height: auto;
     background-color: #013766;
     color: white;
-    width: 100%;
     padding: 12px 0;
 }
 
@@ -107,11 +129,11 @@ footer div{
     justify-content: center;
     width: 100%;
     height: auto;
-    gap: 28px;
+    gap: 32px;
 }
-footer div img{
-    width: 85px;
-}
+#logo-fatec{ width: 124px; }
+#logo-ads{ width: 112px; }
+#logo-cps{ height: 112px; }
 footer p {
     font-weight: 200;
     font-size: 14px;
@@ -123,7 +145,7 @@ footer p {
 .source{
     width: 100%;
     font-size: 12px;
-    font-weight: 100;
+    font-weight: 300;
     font-style: italic;
     text-align: end;
     color: white;
@@ -131,7 +153,7 @@ footer p {
 .question-source{
     width: 100%;
     font-size: 12px;
-    font-weight: 200;
+    font-weight: 300;
     font-style: italic;
     text-align: end;
     color: black;
@@ -153,12 +175,28 @@ footer p {
 }
 
 .modal{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
     background-color: white;
     padding: 24px;
     border: none;
     border-radius: 4px;
-    margin: 0 360px;
+    margin: 0 420px;
     width: 100%;
+    gap: 12px;
+}
+.modal-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.modal hr{
+    width: 100%;
+    height: 1px;
 }
 .modal-title{
     width: 100%;
@@ -193,10 +231,15 @@ footer p {
     font-weight: 500;
 }
 .modal-close-button{
-    background-color: #b6b6b6;
+    left: 0;
+    background: none;
+    color: black;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
 }
-.modal-close-button:hover{
-    background-color: #a0a0a0;
+.modal-close-button img{
+    fill: #0072D4;
 }
 .modal-cancel-button{
     background-color: rgba(208, 0, 3, 0.75);
