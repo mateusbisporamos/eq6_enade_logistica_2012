@@ -8,10 +8,11 @@ var testResult = jsonEnadeTest.test.result
 var testAnswers = jsonEnadeTest.test.answers
 
 const questionNumberSplit = document.getElementById('question-number').textContent.split(' ')
-const questionNumber = questionNumberSplit[1]
+const questionNumber = (questionNumberSplit[1].split('/'))[0]
 
 // LISTAGEM DOS LINKS, MARCANDO CERTO E ERRADO
 const listQuestionsLinks = () => {
+    console.log(questionNumber)
     const ul_questions_link = document.getElementById('questions-link')
 
     ul_questions_link.innerHTML = ''
@@ -68,6 +69,7 @@ const listQuestionsAlternatives = () => {
     
 }
 
+const nextQuestion = (id) => questionNumber != 35 ? window.location.href = `./Eq6_Q${parseInt(questionNumber)+1}.html` : document.getElementById(id).style.disabled = true
 
 const openModalAnswer = () => {
     document.getElementById('modal-answer').style.display = 'flex'
@@ -91,27 +93,29 @@ const openModalAnswer = () => {
     document.getElementById('modal-answer').children[0].innerHTML = ''
     document.getElementById('modal-answer').children[0].innerHTML += 
     `
-        <p class="modal-title">${testAlternatives[questionNumber-1] == testAnswers[questionNumber-1] ? "Resposta Correta" : "Resposta Errada"}</p>
+        <div class="modal-header">
+            <p class="modal-title">${testAlternatives[questionNumber-1] == testAnswers[questionNumber-1] ? "Resposta Correta" : "Resposta Errada"}</p>
+            <button class="modal-close-button" onclick="closeModal('modal-answer')"> <img src="../../imgs/x-icon.svg" alt="Close modal"> </button>
+        </div>
         <hr>
 
         ${
             testAlternatives[questionNumber-1] == testAnswers[questionNumber-1] ?
                 `
-                    <span>Alternativa certa:</span> 
+                    <p style="width: 100%; text-align: start; font-size: 16px;">Alternativa correta: <span style="font-weight: 700;">${testAnswers[questionNumber-1]}</span> </p> 
                     <p class="modal-alternative-text modal-alternative-text-correct">${correctTextAlternative}</p>
                 `
             :
                 `
-                    <span>Você marcou:</span>
+                <p style="width: 100%; text-align: start; font-size: 16px;">Você assinalou a opção: <span style="font-weight: 700;">${testAlternatives[questionNumber-1]}</span> </p>
                     <p class="modal-alternative-text modal-alternative-text-wrong">${wrongTextAlternative}</p>        
                     
-                    <span>Alternativa certa:</span> 
+                    <p style="width: 100%; text-align: start; font-size: 16px;">Alternativa correta: <span style="font-weight: 700;">${testAnswers[questionNumber-1]}</span> </p>
                     <p class="modal-alternative-text modal-alternative-text-correct">${correctTextAlternative}</p>
                 `
         }
 
         <div class="modal-button">
-            <button class="modal-close-button" onclick="closeModal('modal-answer')">FECHAR</button>
             <button class="modal-accept-button" onclick="window.location.href = './Eq6_Q${Number(questionNumber)+1}.html'">PRÓXIMA QUESTÃO</button>
         </div>
     `
@@ -137,7 +141,6 @@ const answerQuestion = () => {
     openModalAnswer()
 }
 
-
 const handleRadioChange = (radioButton) => {
     const answerQuestionButton = document.getElementById('answer-question-button')
     answerQuestionButton.style = "background-color: #0072D4; cursor: pointer"
@@ -147,7 +150,6 @@ const handleRadioChange = (radioButton) => {
     radioButtonAlternative = radioButtonAlternativeSplit[1].split('A')
     userQuestionAnswer = radioButtonAlternative[1].toUpperCase()
 }
-
 
 const finishTest = () => {
     const now = new Date();

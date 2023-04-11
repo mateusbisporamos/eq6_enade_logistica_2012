@@ -52,7 +52,15 @@ main{
     justify-content: center;
     width: 100%;
 }
+.question-content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
 
+#question-number span{
+    font-weight: 400;
+}
 .question-text{
     display: flex;
     flex-direction: column;
@@ -99,7 +107,7 @@ main{
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 24px 0 24px 48px;
+    padding: 0 0 24px 48px;
 }
 .question-alternatives ol{
     display: flex;
@@ -155,10 +163,12 @@ main{
 #answer-question-button, #question-stats-button{
     background-color: #b6b6b6;
     cursor: default;
-}                   
+}                
+#finish-test-button, #next-question-button{
+    background-color: rgba(0, 113, 212);
+}
 #finish-test-button{
     margin-left: auto;
-    background-color: rgba(0, 113, 212);
 }
 
 

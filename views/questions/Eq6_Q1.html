@@ -21,20 +21,25 @@
 
 <body>
     <header>
-        <div class="supporters">
-            <a href="https://www.gov.br/inep/pt-br" target="blank"> <img id="inep-logo" src="../../../imgs/inep_logo.svg" alt="INEP"> </a>
-            <hr>
-            <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade" target="blank"> <img id="enade-logo" src="../../../imgs/enade_logo.svg" alt="ENADE"> </a>
+        <div class="header">
+            <div class="supporters">
+                <a href="https://www.gov.br/inep/pt-br" target="blank"> <img id="inep-logo" src="../../imgs/inep_logo.svg" alt="INEP"> </a>
+                <hr>
+                <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade" target="blank"> <img id="enade-logo" src="../../imgs/enade_logo.svg" alt="ENADE"> </a>
+            </div>
+    
+            <ul class="header-menu">
+                <li onclick="openModal('modal-finish')"> <a >Início</a> </li>
+                <hr>
+                <li onclick="openModal('modal-finish')"> <a >Créditos</a> </li>
+                <li onclick="openModal('modal-finish')"> <a >Sobre</a> </li>
+            </ul>
         </div>
 
-        <ul class="header-menu">
-            <li> <a onclick="openModal('modal-close-test')">Início</a> </li>
-        </ul>
+        <hr>
     </header>
 
     <main>
-        <hr>
-
         <!-- Link para outras questões - Preenchido automaticamente pelo JS -->
         <ul class="questions-link" id="questions-link"> </ul>
 
@@ -42,12 +47,15 @@
 
         <section class="question">
             <!-- Questão -->
-            <div class="question-text">
-                <h3 id="question-number">Questão 1</h3>
-                <p style="width: 100%; text-align: center; font-weight: bold;">Segundo a pesquisa Retratos da Leitura no Brasil, realizada pelo Instituto Pró-Livro, a média anual brasileira de livros lidos por habitante era, em 2011, de 4,0. Em 2007, esse mesmo parâmetro correspondia a 4,7 livros por habitante/ano.</p>
-                <img src="imgs/imgQ1.jpg">
-                <span class="question-source">Instituto Pró-Livro. Disponível em: http://www.prolivro.org.br. Acesso em: 3 jul. 2012 (adaptado).</span>
-                <p>De acordo com as informações apresentadas acima, verifica-se que:</p>
+            <div class="question-content">
+                <div class="question-text">
+                    <h3 id="question-number">Questão <span>1</span>/35</h3>
+                    <p style="width: 100%; text-align: center; font-weight: 500;">Segundo a pesquisa Retratos da Leitura no Brasil, realizada pelo Instituto Pró-Livro, a média anual brasileira de livros lidos por habitante era, em 2011, de 4,0. Em 2007, esse mesmo parâmetro correspondia a 4,7 livros por habitante/ano.</p>
+                    <img src="imgs/imgQ1.jpg">
+                    <span class="question-source">Instituto Pró-Livro. Disponível em: http://www.prolivro.org.br. Acesso em: 3 jul. 2012 (adaptado).</span>
+                </div>
+                <p style="padding-left: 12px; font-weight: 600;">De acordo com as informações apresentadas acima, verifica-se que:</p>
+                <span class="question-source" style="width: 100%; text-align: end;">Fonte: <a href="../../pdfs/Prova.pdf">Prova Oficial</a></span>
             </div>
 
             <!-- Alternativas -->
@@ -65,22 +73,11 @@
             <div class="question-buttons">
                 <button id="answer-question-button" disabled onclick="answerQuestion()">RESPONDER</button>
                 <button id="question-stats-button" disabled>ESTATÍSTICAS</button>
+                <button id="next-question-button" onclick="nextQuestion(id)">Próxima Questão</button>
+
                 <button id="finish-test-button" onclick="openModal('modal-finish')">FINALIZAR SIMULADO</button>
             </div>
         </section>
-
-        <!-- Modal Sair -->
-        <div class="modal-background" id="modal-close-test">
-            <div class="modal">
-                <p class="modal-title">ATENÇÃO!</p>
-                <hr>
-                <p class="modal-text">Você está saindo da área do Simulado. Ao deixar essa página suas respostas serão desconsideradas.</p>
-                <div class="modal-button">
-                    <button class="modal-close-button" onclick="deleteAnswers(); window.location.href = `../../index.html`">SAIR</button>
-                    <button class="modal-cancel-button" onclick="closeModal('modal-close-test')">CANCELAR</button>
-                </div>
-            </div>
-        </div>
 
         <!-- Modal Resposta -->
         <div class="modal-background" id="modal-answer">
@@ -90,12 +87,14 @@
         <!-- Modal Finalizar -->
         <div class="modal-background" id="modal-finish">
             <div class="modal">
-                <p class="modal-title">ATENÇÃO!</p>
+                <div class="modal-header">
+                    <p class="modal-title">Atenção!</p>
+                    <button class="modal-close-button" onclick="closeModal('modal-finish')"> <img src="../../imgs/x-icon.svg" alt="Close modal"> </button>
+                </div>
                 <hr>
                 <p class="modal-text">Você tem certeza de que deseja enviar suas resposta e ver seu resultado? Ao confimar não será possível preencher questões deixadas em branco.</p>
                 <div class="modal-button">
                     <button class="modal-accept-button" onclick="window.location.href = `../result/index.html`; finishTest()">FINALIZAR</button>
-                    <button class="modal-cancel-button" onclick="closeModal('modal-finish')">CANCELAR</button>
                 </div>
             </div>
         </div>
@@ -104,9 +103,9 @@
     
     <footer>
         <div>
-            <a href="http://www.fateccarapicuiba.edu.br/" target="blank"> <img src="../../../imgs/fatec_logo.png" alt="FATEC Carapicuíba"> </a>
-            <a href="http://www.fateccarapicuiba.edu.br/analise-e-desenvolvimento-de-sistemas/" target="blank"> <img src="../../../imgs/ads_logo.png" alt="Curso de Análise e Desenvolvimento de Sistemas"> </a>
-            <a href="https://www.cps.sp.gov.br/" target="blank"> <img src="../../../imgs/cps_logo.png" alt="Centro Paula Souza"> </a>
+            <a href="http://www.fateccarapicuiba.edu.br/" target="blank"> <img src="../../imgs/fatec_logo.png" alt="FATEC Carapicuíba" id="logo-fatec"> </a>
+            <a href="http://www.fateccarapicuiba.edu.br/analise-e-desenvolvimento-de-sistemas/" target="blank"> <img src="../../imgs/ads_logo.png" alt="Curso de Análise e Desenvolvimento de Sistemas" id="logo-ads"> </a>
+            <a href="https://www.cps.sp.gov.br/" target="blank"> <img src="../../imgs/cps_logo.png" alt="Centro Paula Souza" id="logo-cps"> </a>
         </div>
         <p>&copy Todos os direitos reservados aos seus devidos autores.</p>
     </footer>

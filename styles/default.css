@@ -118,7 +118,7 @@ footer{
     justify-content: center;
     width: 100%;
     height: auto;
-    background-color: #013766;
+    background-color: #726a6a;
     color: white;
     padding: 12px 0;
 }
@@ -132,7 +132,7 @@ footer div{
     gap: 32px;
 }
 #logo-fatec{ width: 124px; }
-#logo-ads{ width: 112px; }
+#logo-ads{ height: 64px; }
 #logo-cps{ height: 112px; }
 footer p {
     font-weight: 200;
