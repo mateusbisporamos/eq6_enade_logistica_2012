@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <link rel="stylesheet" href="../../styles/default.css">
     <link rel="stylesheet" href="../../styles/question.css">
 
@@ -21,20 +21,25 @@
 
 <body>
     <header>
-        <div class="supporters">
-            <a href="https://www.gov.br/inep/pt-br" target="blank"> <img id="inep-logo" src="../../../imgs/inep_logo.svg" alt="INEP"> </a>
-            <hr>
-            <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade" target="blank"> <img id="enade-logo" src="../../../imgs/enade_logo.svg" alt="ENADE"> </a>
+        <div class="header">
+            <div class="supporters">
+                <a href="https://www.gov.br/inep/pt-br" target="blank"> <img id="inep-logo" src="../../imgs/inep_logo.svg" alt="INEP"> </a>
+                <hr>
+                <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade" target="blank"> <img id="enade-logo" src="../../imgs/enade_logo.svg" alt="ENADE"> </a>
+            </div>
+    
+            <ul class="header-menu">
+                <li onclick="openModal('modal-finish')"> <a >Início</a> </li>
+                <hr>
+                <li onclick="openModal('modal-finish')"> <a >Créditos</a> </li>
+                <li onclick="openModal('modal-finish')"> <a >Sobre</a> </li>
+            </ul>
         </div>
 
-        <ul class="header-menu">
-            <li> <a onclick="openModal('modal-close-test')">Início</a> </li>
-        </ul>
+        <hr>
     </header>
 
     <main>
-        <hr>
-        
         <!-- Link para outras questões - Preenchido automaticamente pelo JS -->
         <ul class="questions-link" id="questions-link"> </ul>
 
@@ -42,23 +47,42 @@
 
         <section class="question">
             <!-- Questão -->
-            <div class="question-text">
-                <h3 id="question-number">Questão 3</h3>
-                <p>A floresta virgem é o produto de muitos milhões de anos que passaram desde a origem do nosso planeta. Se for abatida, pode crescer uma nova floresta, mas a continuidade é interrompida. A ruptura nos ciclos de vida natural de plantas e animais significa que a floresta nunca será aquilo que seria se as árvores não tivessem sido cortadas. A partir do momento em que a floresta é abatida ou inundada, a ligação com o passado perde-se para sempre. Trata-se de um custo que será suportado por todas as gerações que nos sucederem no planeta. É por isso que os ambientalistas têm razão quando se referem ao meio natural como um “legado mundial”.</p>
-                <p>Mas, e as futuras gerações? Estarão elas preocupadas com essas questões amanhã? As crianças e os jovens, como indivíduos principais das futuras gerações, têm sido, cada vez mais, estimulados a apreciar ambientes fechados, onde podem relacionar-se com jogos de computadores, celulares e outros equipamentos interativos virtuais, desviando sua atenção de questões ambientais e do impacto disso em vidas no futuro, apesar dos esforços em contrário realizados por alguns setores. Observe-se que, se perguntarmos a uma criança ou a um jovem se eles desejam ficar dentro dos seus quartos, com computadores e jogos eletrônicos, ou passear em uma praça, não é improvável que escolham a primeira opção. Essas posições de jovens e crianças preocupam tanto quanto o descaso com o desmatamento de florestas hoje e seus efeitos amanhã.</p>
-                <span class="question-source">SINGER, P. Ética Prática. 2 ed. Lisboa: Gradiva, 2002, p. 292 (adaptado).</span>
+            <div class="question-content">
+                <div class="question-text">
+                    <h3 id="question-number">Questão <span>3</span>/35</h3>
+                    <p style="width: 100%; text-align: start; font-weight: 500;">A floresta virgem é o produto de muitos milhões de anos que passaram desde a origem do nosso planeta. Se for abatida, pode crescer uma nova floresta, mas a continuidade é interrompida. A ruptura nos ciclos de vida natural de plantas e animais significa que a floresta nunca será aquilo que seria se as árvores não tivessem sido cortadas. A partir do momento em que a floresta é abatida ou inundada, a ligação com o passado perde-se para sempre. Trata-se de um custo que será suportado por todas as gerações que nos sucederem no planeta. É por isso que os ambientalistas têm razão quando se referem ao meio natural como um “legado mundial”.</p>
+                    <p style="width: 100%; text-align: start; font-weight: 500;">
+                        Mas, e as futuras gerações? Estarão elas preocupadas com 
+                        essas questões amanhã? As crianças e os jovens, como 
+                        indivíduos principais das futuras gerações, têm sido, cada 
+                        vez mais, estimulados a apreciar ambientes fechados, 
+                        onde podem relacionar-se com jogos de computadores, 
+                        celulares e outros equipamentos interativos virtuais, 
+                        desviando sua atenção de questões ambientais e do 
+                        impacto disso em vidas no futuro, apesar dos esforços 
+                        em contrário realizados por alguns setores. Observe-se que, se perguntarmos a uma criança ou a um jovem 
+                        se eles desejam ficar dentro dos seus quartos, com 
+                        computadores e jogos eletrônicos, ou passear em uma 
+                        praça, não é improvável que escolham a primeira opção. 
+                        Essas posições de jovens e crianças preocupam tanto 
+                        quanto o descaso com o desmatamento de florestas hoje 
+                        e seus efeitos amanhã.
+                    </p>
+                    <span class="question-source">SINGER, P. Ética Prática. 2 ed. Lisboa: Gradiva, 2002, p. 292 (adaptado).</span>
+                </div>
 
-                <p>É um título adequado ao texto apresentado acima:</p>
+                <span class="question-source" style="width: 100%; text-align: end;">Fonte: <a href="../../pdfs/Prova.pdf">Prova Oficial</a></span>
+                <p style="padding-left: 12px; font-weight: 600;">É um título adequado ao texto apresentado acima:</p>
             </div>
 
             <!-- Alternativas -->
             <div class="question-alternatives">
                 <ol type="A" id="ol-question-alternatives">
                     <li> <div class="alternative"> <input type="radio" name="Q1" id="Q1_Aa" onchange="handleRadioChange(this)"> <label for="Q1_Aa">Computador: o legado mundial para as gerações futuras</label> </div> </li>
-                    <li> <div class="alternative"> <input type="radio" name="Q1" id="Q1_Ab" onchange="handleRadioChange(this)"> <label for="Q1_Ab">Uso de tecnologias pelos jovens: indiferença quanto à preservação das floresta</label> </div> </li>
+                    <li> <div class="alternative"> <input type="radio" name="Q1" id="Q1_Ab" onchange="handleRadioChange(this)"> <label for="Q1_Ab">Uso de tecnologias pelos jovens: indiferença quanto à preservação das florestas</label> </div> </li>
                     <li> <div class="alternative"> <input type="radio" name="Q1" id="Q1_Ac" onchange="handleRadioChange(this)"> <label for="Q1_Ac">Preferências atuais de lazer de jovens e crianças: preocupação dos ambientalistas</label> </div> </li>
                     <li> <div class="alternative"> <input type="radio" name="Q1" id="Q1_Ad" onchange="handleRadioChange(this)"> <label for="Q1_Ad">Engajamento de crianças e jovens na preservação do legado natural: uma necessidade imediata</label> </div> </li>
-                    <li> <div class="alternative"> <input type="radio" name="Q1" id="Q1_Ae" onchange="handleRadioChange(this)"> <label for="Q1_Ae">E	Redução de investimentos no setor de comércio eletrônico: proteção das gerações futuras</label> </div> </li>
+                    <li> <div class="alternative"> <input type="radio" name="Q1" id="Q1_Ae" onchange="handleRadioChange(this)"> <label for="Q1_Ae"> Redução de investimentos no setor de comércio eletrônico: proteção das gerações futuras</label> </div> </li>
                 </ol>
             </div>
 
@@ -66,22 +90,12 @@
             <div class="question-buttons">
                 <button id="answer-question-button" disabled onclick="answerQuestion()">RESPONDER</button>
                 <button id="question-stats-button" disabled>ESTATÍSTICAS</button>
+                <button id="next-question-button" onclick="nextQuestion(id)">Próxima Questão</button>
+
                 <button id="finish-test-button" onclick="openModal('modal-finish')">FINALIZAR SIMULADO</button>
+                <button id="test-results-button" style="display: none;" onclick="window.location.href = '../result/index.html'">RESULTADOS</button>
             </div>
         </section>
-        
-        <!-- Modal Sair -->
-        <div class="modal-background" id="modal-close-test">
-            <div class="modal">
-                <p class="modal-title">ATENÇÃO!</p>
-                <hr>
-                <p class="modal-text">Você está saindo da área do Simulado. Ao deixar essa página suas respostas serão desconsideradas.</p>
-                <div class="modal-button">
-                    <button class="modal-close-button" onclick="deleteAnswers(); window.location.href = `../../index.html`">SAIR</button>
-                    <button class="modal-cancel-button" onclick="closeModal('modal-close-test')">CANCELAR</button>
-                </div>
-            </div>
-        </div>
 
         <!-- Modal Resposta -->
         <div class="modal-background" id="modal-answer">
@@ -91,12 +105,14 @@
         <!-- Modal Finalizar -->
         <div class="modal-background" id="modal-finish">
             <div class="modal">
-                <p class="modal-title">ATENÇÃO!</p>
+                <div class="modal-header">
+                    <p class="modal-title">Atenção!</p>
+                    <button class="modal-close-button" onclick="closeModal('modal-finish')"> <img src="../../imgs/x-icon.svg" alt="Close modal"> </button>
+                </div>
                 <hr>
                 <p class="modal-text">Você tem certeza de que deseja enviar suas resposta e ver seu resultado? Ao confimar não será possível preencher questões deixadas em branco.</p>
                 <div class="modal-button">
                     <button class="modal-accept-button" onclick="window.location.href = `../result/index.html`; finishTest()">FINALIZAR</button>
-                    <button class="modal-cancel-button" onclick="closeModal('modal-finish')">CANCELAR</button>
                 </div>
             </div>
         </div>
@@ -105,9 +121,9 @@
     
     <footer>
         <div>
-            <a href="http://www.fateccarapicuiba.edu.br/" target="blank"> <img src="../../../imgs/fatec_logo.png" alt="FATEC Carapicuíba"> </a>
-            <a href="http://www.fateccarapicuiba.edu.br/analise-e-desenvolvimento-de-sistemas/" target="blank"> <img src="../../../imgs/ads_logo.png" alt="Curso de Análise e Desenvolvimento de Sistemas"> </a>
-            <a href="https://www.cps.sp.gov.br/" target="blank"> <img src="../../../imgs/cps_logo.png" alt="Centro Paula Souza"> </a>
+            <a href="http://www.fateccarapicuiba.edu.br/" target="blank"> <img src="../../imgs/fatec_logo.png" alt="FATEC Carapicuíba" id="logo-fatec"> </a>
+            <a href="http://www.fateccarapicuiba.edu.br/analise-e-desenvolvimento-de-sistemas/" target="blank"> <img src="../../imgs/ads_logo.png" alt="Curso de Análise e Desenvolvimento de Sistemas" id="logo-ads"> </a>
+            <a href="https://www.cps.sp.gov.br/" target="blank"> <img src="../../imgs/cps_logo.png" alt="Centro Paula Souza" id="logo-cps"> </a>
         </div>
         <p>&copy Todos os direitos reservados aos seus devidos autores.</p>
     </footer>

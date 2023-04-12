@@ -12,7 +12,7 @@ const listMyAnswers = () => {
         tableMyAnswers.innerHTML +=
         `
             <tr>
-                <td>${elementIndex+1}</td>
+                <td><a href="../questions/Eq6_Q${elementIndex+1}.html">${elementIndex+1}</a></td>
                 <td class="${element == testAnswers[elementIndex] ? "correct-alternative" : "wrong-alternative"}">${element == null ? "-" : element}</td>
             </tr>
         `

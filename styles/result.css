@@ -41,6 +41,12 @@
     margin: 2px;
     border-radius: 4px;
 }
+.test-results div > table tr td a{
+    background: none;
+    color: black;
+    text-decoration: underline;
+}
+
 
 .my-results-percent{
     width: 100%;
