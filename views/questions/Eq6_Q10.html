@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../styles/default.css">
+    <link rel="stylesheet" href="../../styles/question.css">
+    <script src="../../index.js"></script>
+    <script src="./question.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Questão 10 - ENADE Logística 2012</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="supporters">
+                <a href="https://www.gov.br/inep/pt-br" target="blank"> <img id="inep-logo" src="../../imgs/inep_logo.svg" alt="INEP"> </a>
+                <hr>
+                <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade" target="blank"> <img id="enade-logo" src="../../imgs/enade_logo.svg" alt="ENADE"> </a>
+            </div>
+    
+            <ul class="header-menu">
+                <li onclick="openModal('modal-finish')"> <a >Início</a> </li>
+                <hr>
+                <li onclick="openModal('modal-finish')"> <a >Créditos</a> </li>
+                <li onclick="openModal('modal-finish')"> <a >Sobre</a> </li>
+            </ul>
+        </div>
+        <hr>
+    </header>
+    <main>
+        <!-- Link para outras questões - Preenchido automaticamente pelo JS -->
+        <ul class="questions-link" id="questions-link"> </ul>
+        <hr>
+        <section class="question">
+            <!-- Questão -->
+            <div class="question-content">
+                <div class="question-text">
+                    <h3 id="question-number">Questão <span>10</span>/35</h3>
+                    <p style="width: 100%; text-align: center; font-weight: 500;">O procedimento de despacho aduaneiro é iniciado na 
+                        parametrização da carga em canais, onde é submetida 
+                        à análise fiscal e selecionada para um dos canais de 
+                        conferência. Os canais de conferência são quatro: verde, 
+                        amarelo, vermelho e cinza. Considerando esse contexto, 
+                        avalie as afirmações abaixo.</p>
+                    <ol type="I">
+                    <li>A importação selecionada para o canal verde é 
+                        desembaraçada automaticamente, sem qualquer 
+                        verificação.</li>
+                    <li> No caso de seleção para o canal vermelho, ocorre 
+                        a conferência documental, mas não há verificação 
+                        física da mercadoria.</li>
+                    <li>No canal amarelo é realizada a verificação física 
+                        da mercadoria e a aplicação de procedimento 
+                        especial de controle aduaneiro, para verificação 
+                        de elementos indiciários de fraude.</li>
+                </ol>
+                </div>
+                <p style="padding-left: 12px; font-weight: 600;">É correto o que se afirma em</p>
+                <span class="question-source" style="width: 100%; text-align: end;">Fonte: <a href="../../pdfs/Prova.pdf">Prova Oficial</a></span>
+            </div>
+            <!-- Alternativas -->
+            <div class="question-alternatives">
+                <ol type="A" id="ol-question-alternatives">
+                    <li> <div class="alternative"> <input type="radio" name="Q1" id="Q1_Aa" onchange="handleRadioChange(this)"> <label for="Q1_Aa"> I, apenas.</label> </div> </li>
+                    <li> <div class="alternative"> <input type="radio" name="Q1" id="Q1_Ab" onchange="handleRadioChange(this)"> <label for="Q1_Ab"> II, apenas.</label> </div> </li>
+                    <li> <div class="alternative"> <input type="radio" name="Q1" id="Q1_Ac" onchange="handleRadioChange(this)"> <label for="Q1_Ac"> I e III, apenas.</label> </div> </li>
+                    <li> <div class="alternative"> <input type="radio" name="Q1" id="Q1_Ad" onchange="handleRadioChange(this)"> <label for="Q1_Ad"> II e III, apenas.</label> </div> </li>
+                    <li> <div class="alternative"> <input type="radio" name="Q1" id="Q1_Ae" onchange="handleRadioChange(this)"> <label for="Q1_Ae"> I, II e III.</label> </div> </li>
+                </ol>
+            </div>
+            <!-- Botões -->
+            <div class="question-buttons">
+                <button id="answer-question-button" disabled onclick="answerQuestion()">RESPONDER</button>
+                <button id="question-stats-button" disabled>ESTATÍSTICAS</button>
+                <button id="next-question-button" onclick="nextQuestion(id)">Próxima Questão</button>
+
+                <button id="finish-test-button" onclick="openModal('modal-finish')">FINALIZAR SIMULADO</button>
+                <button id="test-results-button" style="display: none;" onclick="window.location.href = '../result/index.html'">RESULTADOS</button>
+            </div>
+        </section>
+
+        <!-- Modal Resposta -->
+        <div class="modal-background" id="modal-answer">
+            <div class="modal"> </div>
+        </div>
+        <!-- Modal Finalizar -->
+        <div class="modal-background" id="modal-finish">
+            <div class="modal">
+                <div class="modal-header">
+                    <p class="modal-title">Atenção!</p>
+                    <button class="modal-close-button" onclick="closeModal('modal-finish')"> <img src="../../imgs/x-icon.svg" alt="Close modal"> </button>
+                </div>
+                <hr>
+                <p class="modal-text">Você tem certeza de que deseja enviar suas resposta e ver seu resultado? Ao confimar não será possível preencher questões deixadas em branco.</p>
+                <div class="modal-button">
+                    <button class="modal-accept-button" onclick="window.location.href = `../result/index.html`; finishTest()">FINALIZAR</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div>
+            <a href="http://www.fateccarapicuiba.edu.br/" target="blank"> <img src="../../imgs/fatec_logo.png" alt="FATEC Carapicuíba" id="logo-fatec"> </a>
+            <a href="http://www.fateccarapicuiba.edu.br/analise-e-desenvolvimento-de-sistemas/" target="blank"> <img src="../../imgs/ads_logo.png" alt="Curso de Análise e Desenvolvimento de Sistemas" id="logo-ads"> </a>
+            <a href="https://www.cps.sp.gov.br/" target="blank"> <img src="../../imgs/cps_logo.png" alt="Centro Paula Souza" id="logo-cps"> </a>
+        </div>
+        <p>&copy Todos os direitos reservados aos seus devidos autores.</p>
+    </footer>
+</body>
+</html>
