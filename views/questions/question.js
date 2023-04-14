@@ -80,7 +80,8 @@ const listQuestionsAlternatives = () => {
     }
 }
 
-const nextQuestion = (id) => questionNumber != 35 ? window.location.href = `./Eq6_Q${parseInt(questionNumber)+1}.html` : document.getElementById(id).style.disabled = true
+const nextQuestion = (id) => window.location.href = `./Eq6_Q${parseInt(questionNumber)+1}.html`
+
 
 const openModalAnswer = () => {
     document.getElementById('modal-answer').style.display = 'flex'
