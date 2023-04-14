@@ -126,10 +126,6 @@ const openModalAnswer = () => {
                     <p class="modal-alternative-text modal-alternative-text-correct">${correctTextAlternative}</p>
                 `
         }
-
-        <div class="modal-button">
-            <button class="modal-accept-button" onclick="window.location.href = './Eq6_Q${Number(questionNumber)+1}.html'">PRÓXIMA QUESTÃO</button>
-        </div>
     `
 }
 
