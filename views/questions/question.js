@@ -12,7 +12,6 @@ const questionNumber = (questionNumberSplit[1].split('/'))[0]
 
 // LISTAGEM DOS LINKS, MARCANDO CERTO E ERRADO
 const listQuestionsLinks = () => {
-    console.log(questionNumber)
     const ul_questions_link = document.getElementById('questions-link')
 
     ul_questions_link.innerHTML = ''
@@ -82,6 +81,101 @@ const listQuestionsAlternatives = () => {
 
 const nextQuestion = (id) => window.location.href = `./Eq6_Q${parseInt(questionNumber)+1}.html`
 
+const openModalGraphic = () => {
+    const chartData = [
+        [1,'D',[29,12,4,7,46]],
+        [2,'E',[13,11,17,21,37]],
+        [3,'D',[9,52,6,24,9]],
+        [4,'E',[27,12,7,17,36]],
+        [5,'C',[9,52,6,24,9]],
+        [6,' A',[61,6,21,7,5]],
+        [7,'B',[14,62,12,4,8]],
+        [8,' D',[19,21,26,2,14]],
+        [9,'E',[16,81,25,27,14]],
+        [10,'A',[39,18,22,6,15]],
+        [11,'B',[21,19,17,2,22]],
+        [12,' C',[25,18,26,21,11]],
+        [13,'D',[2,3,89,3,3]],
+        [14,'E',[2,62,6,11,18]],
+        [15,'A',[6,1,6,14,11]],
+        [16,'B',[6,11,47,2,17]],
+        [17,'A',[21,18,15,16,29]],
+        [18,'D',[46,9,14,17,14]],
+        [19,'B',[25,14,9,42,1]],
+        [20,'A',[11,19,35,11,24]],
+        [21,'E',[28,2,12,3,9]],
+        [22,'C',[12,13,22,16,38]],
+        [23,'A',[7,6,16,8,9]],
+        [24,'E',[58,9,18,1,5]],
+        [25,'D',[29,9,2,15,27]],
+        [26,'C',[18,21,24,21,15]],
+        [27,'C',[21,21,21,21,21]],
+        [28,'B',[21,32,31,1,5]],
+        [29,'C',[1,21,17,19,33]],
+        [30,'D',[3,5,14,43,7]],
+        [31,'E',[18,6,1,3,9]],
+        [32,' E',[3,5,4,54,34]],
+        [33,'A',[8,1,13,6,63]],
+        [34,'B',[23,31,15,11,2]],
+        [35,'D',[9,19,53,11,8]]
+    ]
+
+    document.getElementById('modal-graphic').style.display = 'flex'
+    document.getElementById('modal-graphic').children[0].innerHTML = ''
+    document.getElementById('modal-graphic').children[0].innerHTML += 
+    `
+        <div class="modal-header">
+            <p class="modal-title">Questão ${chartData[questionNumber-1][0]}</p>
+            <button class="modal-close-button" onclick="closeModal('modal-graphic')"> <img src="../../imgs/x-icon.svg" alt="Fechar"> </button>
+        </div>
+        <hr>
+        
+        <p style="width: 100%; text-align: center; font-size: 16px;">Alternativa correta: <span style="font-weight: 700;">${chartData[questionNumber-1][1]}</span> </p>
+        <canvas id="myChart" style="height: 10px" ></canvas>
+
+    `
+
+    const ctx = document.getElementById('myChart');
+    
+    new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['A', 'B', 'C', 'D', 'E'],
+            datasets: [{
+                data: [chartData[questionNumber-1][2][0], chartData[questionNumber-1][2][1], chartData[questionNumber-1][2][2], chartData[questionNumber-1][2][3], chartData[questionNumber-1][2][4]],
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(255, 159, 64)',
+                    'rgb(80, 191, 75)',
+                    'rgb(54, 162, 235)',
+                    'rgb(153, 102, 255)',
+                ],
+            }]
+        },
+        options: {
+            scales:{},
+            plugins: {
+                tooltip: {
+                    enabled: false
+                },
+                datalabels: {
+                    formatter: (value, ctx) => {
+                        const datapoints = ctx.chart.data.datasets[0].data
+                        function totalSum (total, datapoint) {
+                            return total + datapoint
+                        }
+                        const totalPorcentage = datapoints.reduce(totalSum, 0)
+                        const percentageValue = (value/totalPorcentage*100).toFixed(1)
+
+                        return `${percentageValue}%`
+                    },
+                    color: '#fff',
+                }
+            }
+        },
+        plugins: [ChartDataLabels]
+    })
+}
 
 const openModalAnswer = () => {
     document.getElementById('modal-answer').style.display = 'flex'
@@ -107,7 +201,7 @@ const openModalAnswer = () => {
     `
         <div class="modal-header">
             <p class="modal-title">${testAlternatives[questionNumber-1] == testAnswers[questionNumber-1] ? "Resposta Correta" : "Resposta Errada"}</p>
-            <button class="modal-close-button" onclick="closeModal('modal-answer')"> <img src="../../imgs/x-icon.svg" alt="Close modal"> </button>
+            <button class="modal-close-button" onclick="closeModal('modal-answer')"> <img src="../../imgs/x-icon.svg" alt="Fechar"> </button>
         </div>
         <hr>
 

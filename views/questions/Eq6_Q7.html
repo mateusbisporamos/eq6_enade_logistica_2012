@@ -16,6 +16,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js" integrity="sha512-JPcRR8yFa8mmCsfrw4TNte1ZvF1e3+1SdGMslZvmrzDYxS69J7J49vkFL8u6u8PlPJK+H3voElBtUCzaXj+6ig==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <title>Questão 7 - ENADE Logística 2012</title>
 </head>
 
@@ -95,8 +98,8 @@
 
             <!-- Botões -->
             <div class="question-buttons">
-                <button id="answer-question-button" disabled onclick="answerQuestion()">RESPONDER</button>
-                <button id="question-stats-button" disabled>ESTATÍSTICAS</button>
+                <button id="answer-question-button" disabled onclick="answerQuestion()">CORRIGIR</button>
+                <button id="question-stats-button" disabled onclick="openModalGraphic(id)">ESTATÍSTICAS</button>
                 <button id="next-question-button" onclick="nextQuestion(id)">Próxima Questão</button>
 
                 <button id="finish-test-button" onclick="openModal('modal-finish')">FINALIZAR SIMULADO</button>
@@ -107,6 +110,12 @@
         <!-- Modal Resposta -->
         <div class="modal-background" id="modal-answer">
             <div class="modal"> </div>
+        </div>
+
+        <!-- Modal Gráfio -->
+        <div class="modal-background" id="modal-graphic">
+            <div class="modal">
+            </div>
         </div>
 
         <!-- Modal Finalizar -->
