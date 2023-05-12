@@ -131,7 +131,7 @@ const openModalGraphic = () => {
         <hr>
         
         <p style="width: 100%; text-align: center; font-size: 16px;">Alternativa correta: <span style="font-weight: 700;">${chartData[questionNumber-1][1]}</span> </p>
-        <canvas id="myChart" style="height: 10px" ></canvas>
+        <canvas id="myChart" style="max-width: 400px"></canvas>
 
     `
 
@@ -220,6 +220,8 @@ const openModalAnswer = () => {
                     <p class="modal-alternative-text modal-alternative-text-correct">${correctTextAlternative}</p>
                 `
         }
+
+        ${questionNumber != 35 ? `<button id="next-question-button" onclick="nextQuestion()">Próxima Questão</button>` : ""}
     `
 }
 

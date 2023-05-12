@@ -2,253 +2,129 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="../../styles/default.css">
-    <link rel="stylesheet" href="../../styles/result.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="result.js" defer></script>
-    <script src="../../index.js"></script>
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <link rel="stylesheet" href="../../styles/default.css">
+  <link rel="stylesheet" href="../../styles/result.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <script src="result.js" defer></script>
+  <script src="../../index.js"></script>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js" integrity="sha512-JPcRR8yFa8mmCsfrw4TNte1ZvF1e3+1SdGMslZvmrzDYxS69J7J49vkFL8u6u8PlPJK+H3voElBtUCzaXj+6ig==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
-    <title>Resultados - ENADE Logística 2012</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"
+    integrity="sha512-JPcRR8yFa8mmCsfrw4TNte1ZvF1e3+1SdGMslZvmrzDYxS69J7J49vkFL8u6u8PlPJK+H3voElBtUCzaXj+6ig=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <title>Resultados - ENADE Logística 2012</title>
 </head>
 
 <body>
   <header>
     <div class="header">
-        <div class="supporters">
-            <a href="https://www.gov.br/inep/pt-br" target="blank"> <img id="inep-logo" src="../../imgs/inep_logo.svg" alt="INEP"> </a>
-            <hr>
-            <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade" target="blank"> <img id="enade-logo" src="../../imgs/enade_logo.svg" alt="ENADE"> </a>
-        </div>
+      <div class="supporters">
+        <a href="https://www.gov.br/inep/pt-br" target="blank"> <img id="inep-logo" src="../../imgs/inep_logo.svg"
+            alt="INEP"> </a>
+        <hr>
+        <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade" target="blank">
+          <img id="enade-logo" src="../../imgs/enade_logo.svg" alt="ENADE"> </a>
+      </div>
 
-        <ul class="header-menu">
-            <li> <a href="../../index.html">Início</a> </li>
-            <hr>
-            <li> <a href="../creditos.html">Créditos</a> </li>
-            <li> <a href="../sobre.html">Sobre</a> </li>
-        </ul>
+      <ul class="header-menu">
+        <li> <a href="../../index.html">Início</a> </li>
+        <hr>
+        <li> <a href="../creditos.html">Créditos</a> </li>
+        <li> <a href="../sobre.html">Sobre</a> </li>
+      </ul>
     </div>
 
     <hr>
   </header>
 
-    <main>
-        <div class="test-results">
-            <div class="my-answers-results">
-                <p style="font-size: 18px; font-weight: 500; width: 100%; text-align: center;">Respostas do meu Simulado</p>
-                <table id="table-my-answers-results">
-                  <tr>
-                    <th>Questões</th>
-                    <th>Alternativa</th>
-                  </tr>
-                </table>
-            </div>
-
-            <div class="oficial-answers-results">
-                <p style="font-size: 18px; font-weight: 500; width: 100%; text-align: center;">Respostas Oficiais do Gabarito</p>
-                <table>
-                      <tr>
-                        <th>Questões</th>
-                        <th>Alternativa</th>
-                      </tr>
-                      
-                      <tr>
-                        <td><a href="../questions/Eq6_Q1.html">1</a></td>
-                        <td>D</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q2.html">2</a></td>
-                        <td>E</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q3.html">3</a></td>
-                        <td>D</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q4.html">4</a></td>
-                        <td>E</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q5.html">5</a></td>
-                        <td>C</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q6.html">6</a></td>
-                        <td>A</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q7.html">7</a></td>
-                        <td>B</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q8.html">8</a></td>
-                        <td>D</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q9.html">9</a></td>
-                        <td>E</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q10.html">10</a></td>
-                        <td>A</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q11.html">11</a></td>
-                        <td>B</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q12.html">12</a></td>
-                        <td>C</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q13.html">13</a></td>
-                        <td>D</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q14.html">14</a></td>
-                        <td>E</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q15.html">15</a></td>
-                        <td>A</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q16.html">16</a></td>
-                        <td>B</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q17.html">17</a></td>
-                        <td>A</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q18.html">18</a></td>
-                        <td>D</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q19.html">19</a></td>
-                        <td>B</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q20.html">20</a></td>
-                        <td>A</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q21.html">21</a></td>
-                        <td>E</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q22.html">22</a></td>
-                        <td>C</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q23.html">23</a></td>
-                        <td>A</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q24.html">24</a></td>
-                        <td>E</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q25.html">25</a></td>
-                        <td>D</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q26.html">26</a></td>
-                        <td>C</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q27.html">27</a></td>
-                        <td>C</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q28.html">28</a></td>
-                        <td>B</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q29.html">29</a></td>
-                        <td>C</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q30.html">30</a></td>
-                        <td>D</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q31.html">31</a></td>
-                        <td>E</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q32.html">32</a></td>
-                        <td>E</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q33.html">33</a></td>
-                        <td>A</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q34.html">34</a></td>
-                        <td>B</td>
-                      </tr>
-                      <tr>
-                        <td><a href="../questions/Eq6_Q35.html">35</a></td>
-                        <td>D</td>
-                      </tr>
-                </table>
-                
-                <p class="source" style="margin-top: 12px;">fonte: <a href="../../pdfs/Gabarito.pdf" target="blank">PDF</a> <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade/provas-e-gabaritos" target="blank">Site do INEP</a></p>
-            </div>
-
-            <div class="my-results">
-                <p style="font-size: 18px; font-weight: 500; width: 100%; text-align: center;">Resultados do meu Simulado</p>
-
-                <div class="my-results-percent">
-                    <p><span style="color: rgba(0, 153, 0);" id="my-results-percent-correct"></span>/35</p>
-                    <p>Questões Corretas</p>
-                </div>
-
-                <div class="my-results-percent">
-                    <p><span style="color: rgba(208, 0, 3);" id="my-results-percent-wrong"></span>/35</p>
-                    <p>Questões Erradas</p>
-                    <p class="source" style="color: rgba(208, 0, 3);; margin-top: 12px; text-align: center;">*Questões deixadas em branco foram contabilizadas como erradas</p>
-                </div>
-
-                <div class="my-results-percent">
-                    <p><span id="my-results-percent-null"></span>/35</p>
-                    <p>Questões em Branco</p>
-                </div>
-                
-                <div class="my-results-percent">
-                    <p>Tempo de Prova:</p>
-                    <p><span" id="my-results-time"></span></p>
-                </div>
-
-                <a href="">ESTATÍSTICAS</a>
-
-                <div id="my-results-buttons">
-                    <button onclick="deleteAnswers(); startTest(); window.location.href = `./views/questions/Eq6_Q1.html`"> <a href="../questions/Eq6_Q1.html">REFAZER O SIMULADO</a> </button>
-                    <button onclick="deleteAnswers()" style="background-color: rgba(208, 0, 3);"> <a href="../../index.html" style="background-color: rgba(208, 0, 3);">SAIR</a> </button>
-                </div>
-            </div>
-        </div>
-    </main>
-    
-    <footer>
-      <div>
-          <a href="http://www.fateccarapicuiba.edu.br/" target="blank"> <img src="../../imgs/fatec_logo.png" alt="FATEC Carapicuíba" id="logo-fatec"> </a>
-          <a href="http://www.fateccarapicuiba.edu.br/analise-e-desenvolvimento-de-sistemas/" target="blank"> <img src="../../imgs/ads_logo.png" alt="Curso de Análise e Desenvolvimento de Sistemas" id="logo-ads"> </a>
-          <a href="https://www.cps.sp.gov.br/" target="blank"> <img src="../../imgs/cps_logo.png" alt="Centro Paula Souza" id="logo-cps"> </a>
+  <main>
+    <div class="test-results">
+      <div class="my-answers-results">
+        <p style="font-size: 18px; font-weight: 500; width: 100%; text-align: center;">Respostas do meu Simulado</p>
+        <p style="font-size: 12px; font-weight: 300; width: 100%; text-align: center;"><i>Clique no número da questão
+            para ir até ela.</i> </p>
+        <table id="table-my-answers-results">
+          <tr>
+            <th>Questões</th>
+            <th>Alternativas Oficiais</th>
+            <th>Minhas Alternativa</th>
+          </tr>
+        </table>
       </div>
-      <p>&copy Todos os direitos reservados aos seus devidos autores.</p>
+
+      <div class="my-results">
+        
+        <p style="font-size: 18px; font-weight: 500; width: 100%; text-align: center;">Resultados do meu Simulado</p>
+
+        <div id="my-results-grade"> </div>
+
+        <span class="source" style="padding: 4px 0 18px;">
+          Fontes: 
+          <a href="https://prograd.ufs.br/uploads/page_attach/path/15861/Considera__es_sobre_a_nota.pdf" target="blank">Cálculo</a> 
+          <a href="https://blog.saraivaeducacao.com.br/como-funciona-a-pontuacao-do-enade/" target="blank">Classificação</a>
+        </span>
+
+        <div id="questions-results">
+          <div class="my-results-percent">
+            <p><span style="color: rgba(0, 153, 0);" id="my-results-percent-correct"></span>/35</p>
+            <p>Questões Corretas</p>
+          </div>
+
+          <div class="my-results-percent">
+            <p><span style="color: rgba(208, 0, 3);" id="my-results-percent-wrong"></span>/35</p>
+            <p>Questões Erradas</p>
+          </div>
+
+          <div class="my-results-percent">
+            <p><span id="my-results-percent-null"></span>/35</p>
+            <p>Questões em Branco</p>
+          </div>
+        </div>
+
+        <p class="source" style="color: rgb(161, 161, 161); text-align: center;">*Questões deixadas em branco foram
+          contabilizadas como erradas</p>
+
+        <div class="my-results-percent">
+          <p>Tempo de Prova:</p>
+          <p>
+            <span" id="my-results-time"></span>
+          </p>
+        </div>
+
+        <a href="">ESTATÍSTICAS</a>
+
+        <div id="my-results-buttons">
+          <button onclick="deleteAnswers(); startTest(); window.location.href = `./views/questions/Eq6_Q1.html`"> <a
+              href="../questions/Eq6_Q1.html">REFAZER O SIMULADO</a> </button>
+          <button onclick="deleteAnswers()" style="background-color: rgba(208, 0, 3);"> <a href="../../index.html"
+              style="background-color: rgba(208, 0, 3);">SAIR</a> </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div>
+      <a href="http://www.fateccarapicuiba.edu.br/" target="blank"> <img src="../../imgs/fatec_logo.png"
+          alt="FATEC Carapicuíba" id="logo-fatec"> </a>
+      <a href="http://www.fateccarapicuiba.edu.br/analise-e-desenvolvimento-de-sistemas/" target="blank"> <img
+          src="../../imgs/ads_logo.png" alt="Curso de Análise e Desenvolvimento de Sistemas" id="logo-ads"> </a>
+      <a href="https://www.cps.sp.gov.br/" target="blank"> <img src="../../imgs/cps_logo.png" alt="Centro Paula Souza"
+          id="logo-cps"> </a>
+    </div>
+    <p>&copy Todos os direitos reservados aos seus devidos autores.</p>
   </footer>
 </body>
 

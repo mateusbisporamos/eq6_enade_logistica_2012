@@ -84,7 +84,7 @@
             <!-- Botões -->
             <div class="question-buttons">
                 <button id="answer-question-button" disabled onclick="answerQuestion()">CORRIGIR</button>
-                <button id="question-stats-button" disabled>ESTATÍSTICAS</button>
+                <button id="question-stats-button" disabled onclick="openModalGraphic(id)">ESTATÍSTICAS</button>
                 <button id="next-question-button" disabled style="cursor: default; background-color: #b6b6b6;">Próxima Questão</button>
 
                 <button id="finish-test-button" onclick="openModal('modal-finish')">FINALIZAR SIMULADO</button>
@@ -94,7 +94,7 @@
 
         <!-- Modal Resposta -->
         <div class="modal-background" id="modal-answer">
-            <div class="modal"> </div>
+            <div class="modal" style="width: 100%;"> </div>
         </div>
 
         <!-- Modal Gráfio -->

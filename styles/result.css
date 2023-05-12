@@ -47,22 +47,55 @@
     text-decoration: underline;
 }
 
+#my-results-grade{
+    padding: 0 0 12px;
+}
+#my-grade{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 74px;
+    font-weight: bolder;
+}
+#my-grade > span{
+    font-size: 18px;
+    font-weight: 200;
+}
+#my-grade-status{
+    background-color: #dbdbdb;
+    padding: 12px;
+    border-radius: 4px;
+}
+
+#questions-results{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: 200px;
+    padding: 0;
+}
+
 
 .my-results-percent{
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-start;
     background-color: #dbdbdb;
     gap: 0;
 }
 .my-results-percent p{
+    width: 100%;
+    text-align: center;
     color: #606060;
 }
 .my-results-percent p span{
-    font-size: 42px;
+    font-size: 56px;
     font-weight: 700;
 }
 #my-results-time{
