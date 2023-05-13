@@ -33,8 +33,8 @@
             <ul class="header-menu">
                 <li> <a href="index.html">Início</a> </li>
                 <hr>
-                <li> <button id="header-start-test" onclick="openModal('modal-start-test')">Iniciar Simulado</button> </li>    
-                <li> <a href="index.html#instructions">Instruções</a> </li>
+                <li> <button id="header-start-test" onclick="openModal('modal-start-test')">Iniciar Simulado</button> </li>  
+                <li> <a onclick="openModal('modal-instructions')">Instruções</a> </li>
                 <hr>
                 <li> <a href="views/creditos.html">Créditos</a> </li>
                 <li> <a href="views/sobre.html">Sobre</a> </li>
@@ -45,15 +45,14 @@
     </header>
 
     <main>
-
         <section id="poster">
             <div id="poster-text">
-                <p>Teste seu conhecimento, resolva o simulado</p>
-                <h1>ENADE - Logística 2012</h1>
+                <p style="font-size: 18px;">Teste seu conhecimento, resolva o simulado</p>
+                <h1>ENADE - Técnico em Logística 2012</h1>
 
                 <h2>Sobre o ENADE:</h2>
                 <p>"O Exame Nacional de Desempenho dos Estudantes (Enade) avalia o rendimento dos concluintes dos cursos de graduação em relação aos conteúdos programáticos previstos nas diretrizes curriculares dos cursos, o desenvolvimento de competências e habilidades necessárias ao aprofundamento da formação geral e profissional, e o nível de atualização dos estudantes com relação à realidade brasileira e mundial."</p>
-                <span class="source">https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade</span>
+                <span class="source">fonte: <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade" target="blank">Site do ENADE</a></span>
 
                 <button> <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade" target="blank">SAIBA MAIS</a> </button>
             </div>
@@ -68,26 +67,15 @@
         </section>
 
         <section id="instructions">
-            <div id="instructions-text">
-                <h2 id="instructions">INSTRUÇÕES:</h2>
-                <ol type="1">
-                    <li>O simulado consiste de 35 questões objetivas, com 5 opções de resposta, de A a E.</li>
-                    <li>O simulado possui duração livre.</li>
-                    <li>Para responder as questões você deve selecionar uma das alternativa e caso queira conferir a resposta, clique no botão CORRIGIR - que se encontra no canto inferior esquerdo. Você irá visualizar a resposta correta por meio de um pop-up/janela, informando se a alternativa escolhida está certa, ou errada e, qual a resposta correta. Além disso é válido ressaltar que para sair do pop-up/janela, basta clicar no "X".</li>
-                    <li>Você também pode clicar nos botões de navegação, que se encontram na parte superior central. Ao clicar em algum deles, você será redirecionado para a pergunta em questão.</li>
-                    <li>Todas as respostas objetivas serão contabilizadas, assim que você clicar no botão FINALIZAR - este se encontra no canto inferior direito. Ou seja, será apresentado a quantidade total de acertos e erros e mais alguns dados.</li>
-                </ol>
-            </div>
-
             <div id="instructions-button">
                 <button id="start" onclick="openModal('modal-start-test')"> INICIAR O SIMULADO </button>
                 
                 <div id="instructions-files">
                     <p>*Clique nos botões abaixo para ter acesso à prova original em PDF</p>
                     <div id="pdf-files">
-                        <button> <a href="pdfs/Prova.pdf" target="blank">Prova</a> </button>
-                        <button> <a href="pdfs/Gabarito.pdf" target="blank">Gabarito</a> </button>
-                        <button> <a href="pdfs/Padrão de resposta.pdf" target="blank">Padrão de resposta</a> </button>
+                        <button> <a download="./pdfs/Prova.pdf" href="pdfs/Prova.pdf" target="blank">Prova</a> </button>
+                        <button> <a download="./pdfs/Gabarito.pdf" href="pdfs/Gabarito.pdf" target="blank">Gabarito</a> </button>
+                        <button> <a download="./pdfs/Padrão de resposta.pdf" href="pdfs/Padrão de resposta.pdf" target="blank">Padrão de resposta</a> </button>
                     </div>
                 </div>
             </div>
@@ -102,11 +90,29 @@
                 <hr>
                 <p class="modal-text">Você está prestes a iniciar o Simulado, antes de começar tenha certeza de que leu as instruções corretamente.</p>
                 <div class="modal-button">
-                    <button class="modal-accept-button" onclick="closeModal('modal-start-test'); window.location.href = `./#instructions`">LER INSTRUÇÕES</button>
+                    <button class="modal-accept-button" onclick="closeModal('modal-start-test'), openModal('modal-instructions');">LER INSTRUÇÕES</button>
                     <button class="modal-accept-button" onclick="startTest(); window.location.href = `./views/questions/Eq6_Q1.html`">COMEÇAR</button>
                 </div>
             </div>
         </div>
+
+        <div class="modal-background" id="modal-instructions">
+            <div class="modal" style="margin: 0 100px;">
+                <div class="modal-header">
+                    <p class="modal-title">INSTRUÇÕES!</p>
+                    <button class="modal-close-button" onclick="closeModal('modal-instructions')"> <img src="imgs/x-icon.svg" alt="Close modal"> </button>
+                </div>
+                <hr>
+                <ol type="1" id="instructions-list">
+                    <li>O simulado consiste de 35 questões objetivas, com 5 opções de resposta, de A a E.</li>
+                    <li>O simulado possui duração livre.</li>
+                    <li>Para responder as questões você deve selecionar uma das alternativa e caso queira conferir a resposta, clique no botão CORRIGIR - que se encontra no canto inferior esquerdo. Você irá visualizar a resposta correta por meio de um pop-up/janela, informando se a alternativa escolhida está certa, ou errada e, qual a resposta correta. Além disso é válido ressaltar que para sair do pop-up/janela, basta clicar no "X".</li>
+                    <li>Você também pode clicar nos botões de navegação, que se encontram na parte superior central. Ao clicar em algum deles, você será redirecionado para a pergunta em questão.</li>
+                    <li>Todas as respostas objetivas serão contabilizadas, assim que você clicar no botão FINALIZAR - este se encontra no canto inferior direito. Ou seja, será apresentado a quantidade total de acertos e erros e mais alguns dados.</li>
+                </ol>
+            </div>
+        </div>
+
     </main>
     
     <footer>

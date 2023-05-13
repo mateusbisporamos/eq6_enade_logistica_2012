@@ -79,7 +79,7 @@ const listQuestionsAlternatives = () => {
     }
 }
 
-const nextQuestion = (id) => window.location.href = `./Eq6_Q${parseInt(questionNumber)+1}.html`
+const nextQuestion = () => window.location.href = `./Eq6_Q${parseInt(questionNumber)+1}.html`
 
 const openModalGraphic = () => {
     const chartData = [
@@ -130,9 +130,10 @@ const openModalGraphic = () => {
         </div>
         <hr>
         
-        <p style="width: 100%; text-align: center; font-size: 16px;">Alternativa correta: <span style="font-weight: 700;">${chartData[questionNumber-1][1]}</span> </p>
-        <canvas id="myChart" style="max-width: 400px"></canvas>
-
+        <p class="modal-text">Gráfico com a porcentagem de distribuição de respostas por alternativa</p>
+        <canvas id="myChart" style="display: felx; justify-self: center; max-height: 220px";></canvas>
+        <p style="width: 100%; text-align: center; font-size: 12px;">Alternativa correta: <span style="font-weight: 700;">${chartData[questionNumber-1][1]}</span> </p>
+        <span class="question-source">fonte: Dados fictícios</span>
     `
 
     const ctx = document.getElementById('myChart');

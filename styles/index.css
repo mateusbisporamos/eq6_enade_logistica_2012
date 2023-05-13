@@ -28,7 +28,7 @@
     width: 55%;
     height: 100%;
     background-color: #0072D4;
-    padding: 72px 0px 72px 72px;
+    padding: 24px 0 24px 72px;
 }
 
 #poster-text p:nth-child(1){
@@ -39,9 +39,9 @@
 }
 #poster-text h1{
     width: 100%;
-    margin-top: -10px;
     font-size: 58px;
     font-weight: 900;
+    line-height: 58px;
 }
 #poster-text h2{
     margin-top: 12px;
@@ -56,6 +56,7 @@
     font-weight: 200;
     margin-top: 4px;
     margin-bottom: 8px;
+    text-overflow: ellipsis;
 }
 #poster-text button{
     margin-top: 24px;
@@ -126,19 +127,21 @@
 #instructions-text h2{
     font-size: 32px;
 }
-#instructions-text ol{
+#instructions-list{
     padding: 12px 54px;
     width: 100%;
+    gap: 24px;
 }
-#instructions-text ol li{
+#instructions-list li{
     height: 100%;
     margin-bottom: 8px;
     font-weight: 400;
     cursor: default;
     transition: .2s;
+    color: #606060;
 }
-#instructions-text ol li:hover{
-    font-weight: 600;
+#instructions-list li:hover{
+    font-weight: bold;
 }
 
 #instructions-button{
