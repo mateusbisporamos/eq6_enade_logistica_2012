@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="default.css">
+    <link rel="stylesheet" href="../styles/default.css">
+    <link rel="stylesheet" href="../styles/index.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,34 +21,44 @@
 
 <body>
     <header>
-        <div class="supporters">
-            <a href="https://www.gov.br/inep/pt-br"> <img id="inep-logo" src="../imgs/inep_logo.svg" alt="INEP"> </a>
-            <hr>
-            <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade"> <img id="enade-logo" src="../imgs/enade_logo.svg" alt="ENADE"> </a>
+        <div class="header">
+            <div class="supporters">
+                <a href="https://www.gov.br/inep/pt-br" target="blank"> <img id="inep-logo" src="../imgs/inep_logo.svg" alt="INEP"> </a>
+                <hr>
+                <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade" target="blank"> <img id="enade-logo" src="../imgs/enade_logo.svg" alt="ENADE"> </a>
+            </div>
+    
+            <ul class="header-menu">
+                <li> <a href="../index.html">Início</a> </li>
+                <hr>
+                <li> <button id="header-start-test" onclick="openModal('modal-start-test')">Iniciar Simulado</button> </li>  
+                <li> <a onclick="openModal('modal-instructions')">Instruções</a> </li>
+                <hr>
+                <li> <a href="../views/creditos.html">Créditos</a> </li>
+                <li> <a href="../views/sobre.html">Sobre</a> </li>
+            </ul>
         </div>
 
-        <ul class="menu">
-            <li> <a href="index.html">Início</a> </li>
-            <li> <a href="views/creditos.html">Créditos</a> </li>
-            <li> <a href="views/sobre.html">Sobre</a> </li>
-        </ul>
+        <hr>
     </header>
 
     <main>
         <div>
             <h2>Sobre o Projeto:</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium nec nisi at elementum. In a tristique augue. Duis malesuada lacinia risus in vulputate. Vestibulum convallis dictum nibh vel varius. Nullam accumsan consectetur eros sed convallis. Nullam euismod luctus neque, ac pulvinar justo suscipit at.     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium nec nisi at elementum. In a tristique augue. Duis malesuada lacinia risus in vulputate. Vestibulum convallis dictum nibh vel varius. Nullam accumsan consectetur eros sed convallis. Nullam euismod luctus neque, ac pulvinar justo suscipit at.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium nec nisi at elementum. In a tristique augue. Duis malesuada lacinia risus in vulputate. Vestibulum convallis dictum nibh vel varius. Nullam accumsan consectetur eros sed convallis. Nullam euismod luctus neque, ac pulvinar justo suscipit at.     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium nec nisi at elementum. In a tristique augue. Duis malesuada lacinia risus in vulputate. Vestibulum convallis dictum nibh vel varius. Nullam accumsan consectetur eros sed convallis. Nullam euismod luctus neque, ac pulvinar justo suscipit at.</p>
+            Esse projeto foi desenvolvido por alunos do 1º semestre de Análise e Desenvolvimento de Sistemas da Fatec Carapicuíba dentro da disciplina de ADS – Análise e Desenvolvimento de Sistemas
+                <br>
+                O público alvo são estudantes e professores dos cursos superiores que possuem interesse em realizar o simulado Enade de Logística da prova aplicada em 2012.
+            O <i>SimuNade</i> tem como objetivo auxiliar os estudantes a se aprimorarem e se prepararem para as provas do Exame Nacional de Desempenho dos Estudantes (ENADE). Oferecendo aos mesmos a possibilidade de aplicar o simulado da edição do Enade de 2012 de Técnologo em Logística.
         </div>
 
-        <div></div>
+        <div>
     </main>
     
     <footer>
         <div>
-            <a href="http://www.fateccarapicuiba.edu.br/" target="blank"> <img src="../../../imgs/fatec_logo.png" alt="FATEC Carapicuíba"> </a>
-            <a href="http://www.fateccarapicuiba.edu.br/analise-e-desenvolvimento-de-sistemas/" target="blank"> <img src="../../../imgs/ads_logo.png" alt="Curso de Análise e Desenvolvimento de Sistemas"> </a>
-            <a href="https://www.cps.sp.gov.br/" target="blank"> <img src="../../../imgs/cps_logo.png" alt="Centro Paula Souza"> </a>
+            <a href="http://www.fateccarapicuiba.edu.br/" target="blank"> <img src="../imgs/fatec_logo.png" alt="FATEC Carapicuíba" id="logo-fatec"> </a>
+            <a href="http://www.fateccarapicuiba.edu.br/analise-e-desenvolvimento-de-sistemas/" target="blank"> <img src="../imgs/ads_logo.png" alt="Curso de Análise e Desenvolvimento de Sistemas" id="logo-ads"> </a>
+            <a href="https://www.cps.sp.gov.br/" target="blank"> <img src="../imgs/cps_logo.png" alt="Centro Paula Souza" id="logo-cps"> </a>
         </div>
         <p>&copy Todos os direitos reservados aos seus devidos autores.</p>
     </footer>
