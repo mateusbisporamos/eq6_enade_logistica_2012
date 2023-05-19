@@ -164,11 +164,16 @@ main{
     background-color: #b6b6b6;
     cursor: default;
 }                
-#finish-test-button, #test-results-button, #next-question-button{
+#finish-test-button, #next-question-button, #result-buttons button{
     background-color: rgba(0, 113, 212);
 }
-#finish-test-button, #test-results-button{
+#finish-test-button, #result-buttons{
     margin-left: auto;
+}
+
+#result-buttons{
+    gap: 12px;
+    display: none;
 }
 
 

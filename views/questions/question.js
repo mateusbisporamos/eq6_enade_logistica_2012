@@ -31,15 +31,52 @@ const listQuestionsAlternatives = () => {
 
     if (jsonEnadeTest.finishedAt != undefined) {
         document.getElementById('finish-test-button').style.display = "none"
-        document.getElementById('test-results-button').style.display = "flex"
+        document.getElementById('result-buttons').style.display = "flex"
 
         for (let counter = 0; counter < 5; counter++) {
             const li_div_question_alternatives = li_question_alternatives[counter].children[0]
             li_question_alternatives[counter].className = "alternative disable-alternative"
             li_div_question_alternatives.disabled = true
+            li_div_question_alternatives.style.cursor = "default"
+
+            if(testResult[questionNumber - 1] == null){
+                for (let counter = 0; counter < 5; counter++) {
+                    li_question_alternatives[counter].className = "alternative no-alternative"
+                }
+            } else {
+                for (let counter = 0; counter < 5; counter++) {
+                    const li_div_question_alternatives = li_question_alternatives[counter].children[0]
+        
+                    const alternativeSplit = li_div_question_alternatives.id.split('_')
+                    const alternative = alternativeSplit[1].split('A').toString().toUpperCase()
+        
+                    if(alternative[1] == testAnswers[questionNumber-1]){
+                        li_question_alternatives[counter].className = "alternative correct-alternative"
+                        li_div_question_alternatives.disabled = true
+                        if(testAlternatives[questionNumber-1] == testAnswers[questionNumber-1]){
+                            li_div_question_alternatives.disabled = false
+                            li_div_question_alternatives.checked = true
+                        }
+                    } else if (alternative[1] == testAlternatives[questionNumber-1]) {
+                        li_question_alternatives[counter].className = "alternative wrong-alternative"
+                        li_div_question_alternatives.disabled = false
+                        li_div_question_alternatives.checked = true
+                    } else {
+                        li_question_alternatives[counter].className = "alternative disable-alternative"
+                        li_div_question_alternatives.disabled = true
+                    }
+        
+                    const answerQuestionButton = document.getElementById('answer-question-button')
+                    answerQuestionButton.style = "background-color: #b6b6b6; cursor: default"
+                    answerQuestionButton.disabled = true
+        
+                    const statsQuestionButton = document.getElementById('question-stats-button')
+                    statsQuestionButton.style = "background-color: #0072D4; cursor: pointer"
+                    statsQuestionButton.disabled = false
+                }
+            }
         }
     } else{
-
         if(testResult[questionNumber - 1] == null){
             for (let counter = 0; counter < 5; counter++) {
                 li_question_alternatives[counter].className = "alternative no-alternative"

@@ -1,0 +1,117 @@
+.main-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    background-color: rgba(0, 73, 136);
+    border-radius: 4px;
+}
+.main-top button{
+    padding: 0;
+    border-radius: 4px;
+    background-color: rgba(0, 113, 212);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 0 64px;
+    font-family: 'Poppins';
+    border: none;
+}
+.main-top button:hover{
+    cursor: pointer;
+}
+
+
+
+#chart-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    margin-top: 12px;
+    padding: 24px 24px;
+    background-color: #C9C9C9;
+    border-radius: 4px;
+    gap: 24px;
+}
+
+.chart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 24px 24px;
+    border-radius: 4px;
+    height: 100%;
+    gap: 12px;
+    transition: .5s;
+    background-color: rgba(0, 73, 136);
+    color: white;
+}
+.chart hr{
+    width: 1px;
+    height: 300px;
+    border: 1px solid rgb(18, 88, 150);
+}
+
+.test-info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    min-width: 300px;
+    gap: 12px;
+    height: 100%;
+}
+.test-info h3{
+    font-size: 18px;
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+}
+.test-info hr{
+    height: .5px;
+    width: 100%;
+    border: 1px solid rgb(18, 88, 150);
+}
+.question-result{
+    padding: 12px;
+    border-radius: 4px;
+    width: 100%;
+    text-align: center;
+}
+.test-info a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 0;
+    border-radius: 4px;
+    background-color: rgba(0, 113, 212);
+    font-size: 14px;
+    padding: 0 24px;
+    font-family: 'Poppins';
+    border: none;
+    width: 100%;
+    height: 56px;
+}
+.test-info a:hover{
+    cursor: pointer;
+}
+.question-answer{
+    min-width: 100%;
+    text-align: center;
+    font-size: 16px;
+}
+
+.chart-js{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+}

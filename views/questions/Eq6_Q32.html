@@ -101,7 +101,10 @@
                 <button id="next-question-button" onclick="nextQuestion(id)">Próxima Questão</button>
 
                 <button id="finish-test-button" onclick="openModal('modal-finish')">FINALIZAR SIMULADO</button>
-                <button id="test-results-button" style="display: none;" onclick="window.location.href = '../result/index.html'">RESULTADOS</button>
+                <div id="result-buttons">
+                    <button id="test-general-statistics-button" onclick="window.location.href = '../result/statistics.html'">ESTATÍSTICAS GERAIS</button>
+                    <button id="test-results-button" onclick="window.location.href = '../result/index.html'">RESULTADOS</button>
+                </div>
             </div>
         </section>
 
