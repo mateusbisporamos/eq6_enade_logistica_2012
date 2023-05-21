@@ -1,22 +1,41 @@
 .main-top{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border-radius: 4px;
+}
+.main-top p{
+    background-color: rgba(0, 73, 136);
+    font-size: 18px;
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+    color: white;
+    border-radius: 4px;
+    padding: 12px 24px;
+}
+.main-top-buttons{
+    display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
     padding: 12px 24px;
     background-color: rgba(0, 73, 136);
     border-radius: 4px;
 }
-.main-top button{
+.main-top-buttons button{
     padding: 0;
     border-radius: 4px;
     background-color: rgba(0, 113, 212);
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 56px;
-    font-weight: 500;
-    font-size: 14px;
-    padding: 0 64px;
+    height: 42px;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 0 42px;
     font-family: 'Poppins';
     border: none;
 }
@@ -30,7 +49,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
-    margin-top: 12px;
+    margin: 12px 0;
     padding: 24px 24px;
     background-color: #C9C9C9;
     border-radius: 4px;

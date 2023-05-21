@@ -88,5 +88,6 @@ const enadeTest = {
 };
 
 const startTest = () => {
+    deleteAnswers()
     window.localStorage.setItem('enadeTest', JSON.stringify(enadeTest))
 }

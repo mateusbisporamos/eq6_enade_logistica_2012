@@ -41,12 +41,12 @@ const chartData = [
     [35,'D',[9,19,53,11,8]]
 ]
 
+
 const listCharts = (testAlternatives, chartData) => {
     chartData.map((element, elementIndex) => {
-        // console.log("Questão: " + element[0].trim())
-        // console.log("Resposta: " + element[1])
-        // console.log("Alternativa: " + testAlternatives[elementIndex])
-        // console.log(element[1] == testAlternatives[elementIndex])
+        console.log(element[1])
+        console.log(testAlternatives[elementIndex])
+        console.log(element[1] == testAlternatives[elementIndex])
         document.getElementById("chart-section").innerHTML += 
         `
             <div class="chart">
@@ -54,9 +54,9 @@ const listCharts = (testAlternatives, chartData) => {
                     <h3>Questão ${element[0]}</h3>
 
                     ${
-                        element[1] == testAlternatives[elementIndex] ?
+                        element[1].trim() == testAlternatives[elementIndex].trim() ?
                         `<p class="question-result correct-alternative">Resposta correta<p/>`
-                        : element[1] != null ?
+                        : element[1].trim() != null ?
                         `<p class="question-result wrong-alternative">Resposta incorreta<p/>` 
                         : 
                         `<p class="question-result no-alternative">Questão não respondida<p/>`
@@ -74,20 +74,20 @@ const listCharts = (testAlternatives, chartData) => {
                 </div>
             </div>
         `
-
-        var ctx = document.getElementById(`myChart${element[0]}`)
-        console.log(ctx)
-        new Chart(ctx, {
+    })
+    
+    for (let i = 0; i < chartData.length; i++) {
+        new Chart(document.getElementById(`myChart${i+1}`), {
             type: 'pie',
             data: {
                 labels: ['A', 'B', 'C', 'D', 'E'],
                 datasets: [{
                     data: [
-                        chartData[elementIndex][2][0],
-                        chartData[elementIndex][2][1],
-                        chartData[elementIndex][2][2],
-                        chartData[elementIndex][2][3],
-                        chartData[elementIndex][2][4]
+                        chartData[i][2][0],
+                        chartData[i][2][1],
+                        chartData[i][2][2],
+                        chartData[i][2][3],
+                        chartData[i][2][4]
                     ],
                     backgroundColor: [
                         'rgb(255, 99, 132)',
@@ -121,8 +121,7 @@ const listCharts = (testAlternatives, chartData) => {
             },
             plugins: [ChartDataLabels]
         })
-        console.log(ctx)
-    })
+    }
 }
 
 window.onload = listCharts(testAlternatives, chartData)
