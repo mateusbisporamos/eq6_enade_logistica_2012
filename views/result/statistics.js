@@ -44,9 +44,6 @@ const chartData = [
 
 const listCharts = (testAlternatives, chartData) => {
     chartData.map((element, elementIndex) => {
-        console.log(element[1])
-        console.log(testAlternatives[elementIndex])
-        console.log(element[1] == testAlternatives[elementIndex])
         document.getElementById("chart-section").innerHTML += 
         `
             <div class="chart">
@@ -54,13 +51,14 @@ const listCharts = (testAlternatives, chartData) => {
                     <h3>Questão ${element[0]}</h3>
 
                     ${
-                        element[1].trim() == testAlternatives[elementIndex].trim() ?
+                        testAlternatives[elementIndex] == null ?
+                        `<p class="question-result" style="background-color: #c9c9c92f;">Questão não respondida<p/>`
+                        : element[1].trim() == testAlternatives[elementIndex].trim() ?
                         `<p class="question-result correct-alternative">Resposta correta<p/>`
-                        : element[1].trim() != null ?
-                        `<p class="question-result wrong-alternative">Resposta incorreta<p/>` 
-                        : 
-                        `<p class="question-result no-alternative">Questão não respondida<p/>`
+                        :
+                        `<p class="question-result wrong-alternative">Resposta incorreta<p/>`
                     }
+
                     <hr>
                     <p class="question-answer">Você marcou a alternativa: <b>${testAlternatives[elementIndex]}</b></p>
                     <p class="question-answer">Alternativa correta: <b>${element[1]}</b></p>
