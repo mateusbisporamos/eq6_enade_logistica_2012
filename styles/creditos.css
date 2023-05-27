@@ -1,8 +1,3 @@
-/* footer{
-    position: absolute;
-    bottom: 0;
-} */
-
 .content{
     display: flex;
     flex-direction: column;
@@ -17,6 +12,14 @@
     align-items: flex-start;
     justify-content: center;
     gap: 16px;
+}
+.context-text h3{
+    width: 100%;
+    text-align: center;
+    font-size: 36px;
+}
+.context-text p{
+    text-indent: 12px;
 }
 
 .authors{
@@ -40,7 +43,7 @@
 .authors ul{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     font-size: 12px;
     width: 100%;
     padding: 0 32px;

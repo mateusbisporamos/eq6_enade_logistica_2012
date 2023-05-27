@@ -1,25 +1,65 @@
-<html>
-    <!DOCTYPE html>
-    <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sobre</title>
-        <style> body {font: normal 16px arial, verdana, serif;} 
-        h1{text-align: center;}
-        h2{text-align: center;}
-        p{text-align: center;}
-        </style>
-    </head>
-    <body>
-        <h1>Sobre o projeto</h1>
-        <p>Esse projeto foi desenvolvido pelos alunos do curso de <b>Análise e Desenvolvimento de Sistemas</b> da <b>FATEC Carapicuíba</b>, destinado aos estudantes e professores de curso superior que possuam interesse emrealizar o simulado do<b> ENADE </b>de Logística de 2012.</p>
-        <p>O mesmo tem o intuito de ser um simulado automatizado da <b>prova do ENADE de Logística do ano de 2012, </b>onde todas as questões possuem multiplas alternativas, possibilitando assim que o candidato/aluno possa resolver a provas/simulado de forma online e analisar seu desempenho.</p>
-        <p>Assim a realização e disponibilização desse sistema web em formato de simulado online, possui como objetivo gerar facilidade e praticidadena resolução da prova <b>ENADE</b> por meio da tecnologia, uma vez que a prova oficial do  ENADE  de Logistica 2017 atualmente está disponivel apenas em pdf.</p>
-        <h2>Autores:</h2> <p>DIAS, <b>Giovane</b><br>MAGALHÃES, <b>Luiz</b><br>RAMOS, <b>Mateus</b><br>PAZIANOTO, <b>Pedro</b></p>
-        <p>Orientadora:<br><br>Profª MSC FELIX, <b>Rita</b></p>
+<!DOCTYPE html>
+<html lang="pt-br">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../styles/default.css">
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/creditos.css">
+    <link rel="stylesheet" href="../styles/sobre.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <title>Créditos</title>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <div class="supporters">
+                <a href="https://www.gov.br/inep/pt-br" target="blank"> <img id="inep-logo" src="../imgs/inep_logo.svg" alt="INEP"> </a>
+                <hr>
+                <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade" target="blank"> <img id="enade-logo" src="../imgs/enade_logo.svg" alt="ENADE"> </a>
+            </div>
     
-    </body>
-    </html>
+            <ul class="header-menu">
+                <li> <a href="../index.html">Início</a> </li>
+                <hr>
+                <li> <button id="header-start-test" onclick="openModal('modal-start-test')">Iniciar Simulado</button> </li>  
+                <li> <a onclick="openModal('modal-instructions')">Instruções</a> </li>
+                <hr>
+                <li> <a href="../views/creditos.html">Créditos</a> </li>
+                <li> <a href="../views/sobre.html">Sobre</a> </li>
+            </ul>
+        </div>
+
+        <hr>
+    </header>
+
+    <main>
+        <div class="content">
+            <div class="context-text">
+                <h3>Sobre o projeto</h3>
+                <p>Esse projeto foi desenvolvido pelos alunos do curso de <b>Análise e Desenvolvimento de Sistemas</b> da <b>FATEC Carapicuíba</b>, destinado aos estudantes e professores de curso superior que possuam interesse emrealizar o simulado do<b> ENADE </b>de Logística de 2012.</p>
+                <p>O mesmo tem o intuito de ser um simulado automatizado da <b>prova do ENADE de Logística do ano de 2012, </b>onde todas as questões possuem multiplas alternativas, possibilitando assim que o candidato/aluno possa resolver a provas/simulado de forma online e analisar seu desempenho.</p>
+                <p>Assim a realização e disponibilização desse sistema web em formato de simulado online, possui como objetivo gerar facilidade e praticidadena resolução da prova <b>ENADE</b> por meio da tecnologia, uma vez que a prova oficial do  ENADE  de Logistica 2017 atualmente está disponivel apenas em pdf.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <a href="http://www.fateccarapicuiba.edu.br/" target="blank"> <img src="../imgs/fatec_logo.png" alt="FATEC Carapicuíba" id="logo-fatec"> </a>
+            <a href="http://www.fateccarapicuiba.edu.br/analise-e-desenvolvimento-de-sistemas/" target="blank"> <img src="../imgs/ads_logo.png" alt="Curso de Análise e Desenvolvimento de Sistemas" id="logo-ads"> </a>
+            <a href="https://www.cps.sp.gov.br/" target="blank"> <img src="../imgs/cps_logo.png" alt="Centro Paula Souza" id="logo-cps"> </a>
+        </div>
+        <p>&copy Todos os direitos reservados aos seus devidos autores.</p>
+    </footer>
+</body>
+
+</html>
