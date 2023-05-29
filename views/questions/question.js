@@ -16,13 +16,24 @@ const listQuestionsLinks = () => {
 
     ul_questions_link.innerHTML = ''
 
-    testResult.map((element, elementIndex) => 
-        ul_questions_link.innerHTML += `
-            <li class="${elementIndex+1 == questionNumber && element == false ? "actual-question wrong-answer" : elementIndex+1 == questionNumber && element == true ? "actual-question correct-answer" : elementIndex+1 == questionNumber ? "actual-question" : element == null ? "no-answer" : element == true ? "correct-answer" : "wrong-answer"}">
-                <a href="./Eq6_Q${elementIndex+1}.html">${elementIndex+1}</a>
-            </li>
-        `
-    )
+    if (jsonEnadeTest.finishedAt != undefined) {
+        testResult.map((element, elementIndex) =>
+            ul_questions_link.innerHTML += `
+                <li class="${elementIndex+1 == questionNumber && element == false ? "actual-question wrong-answer" : elementIndex+1 == questionNumber && element == true ? "actual-question correct-answer" : elementIndex+1 == questionNumber ? "wrong-answer actual-question" : element == null ? "wrong-answer" : element == true ? "correct-answer" : "wrong-answer"}">
+                    <a href="./Eq6_Q${elementIndex+1}.html">${elementIndex+1}</a>
+                </li>
+            `
+        )
+    } else {
+        testResult.map((element, elementIndex) =>
+            ul_questions_link.innerHTML += `
+                <li class="${elementIndex+1 == questionNumber && element == false ? "actual-question wrong-answer" : elementIndex+1 == questionNumber && element == true ? "actual-question correct-answer" : elementIndex+1 == questionNumber ? "actual-question" : element == null ? "no-answer" : element == true ? "correct-answer" : "wrong-answer"}">
+                    <a href="./Eq6_Q${elementIndex+1}.html">${elementIndex+1}</a>
+                </li>
+            `
+        )
+
+    }
 }
 
 // LISTAGEM DAS ALTERNATIVAS, MARCANDO CERTO E ERRADO
@@ -38,12 +49,7 @@ const listQuestionsAlternatives = () => {
             li_question_alternatives[counter].className = "alternative disable-alternative"
             li_div_question_alternatives.disabled = true
             li_div_question_alternatives.style.cursor = "default"
-
-            if(testResult[questionNumber - 1] == null){
-                for (let counter = 0; counter < 5; counter++) {
-                    li_question_alternatives[counter].className = "alternative no-alternative"
-                }
-            } else {
+            
                 for (let counter = 0; counter < 5; counter++) {
                     const li_div_question_alternatives = li_question_alternatives[counter].children[0]
         
@@ -74,7 +80,7 @@ const listQuestionsAlternatives = () => {
                     statsQuestionButton.style = "background-color: #0072D4; cursor: pointer"
                     statsQuestionButton.disabled = false
                 }
-            }
+            
         }
     } else{
         if(testResult[questionNumber - 1] == null){

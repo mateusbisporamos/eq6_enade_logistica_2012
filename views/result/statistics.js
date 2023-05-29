@@ -60,7 +60,7 @@ const listCharts = (testAlternatives, chartData) => {
                     }
 
                     <hr>
-                    <p class="question-answer">Você marcou a alternativa: <b>${testAlternatives[elementIndex]}</b></p>
+                    <p class="question-answer">Você marcou a alternativa: <b>${testAlternatives[elementIndex] != null ? testAlternatives[elementIndex] : " -" }</b></p>
                     <p class="question-answer">Alternativa correta: <b>${element[1]}</b></p>
                     <hr>
                     <div class="chart-js">
